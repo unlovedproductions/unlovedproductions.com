@@ -25,6 +25,9 @@ export function Navbar() {
           <Link href="/about" className="text-white hover:text-[#8B3A62] transition-colors text-sm font-medium">
             About
           </Link>
+          <Link href="/faq" className="text-white hover:text-[#8B3A62] transition-colors text-sm font-medium">
+            FAQ
+          </Link>
           <Link href="/contact" className="text-white hover:text-[#8B3A62] transition-colors text-sm font-medium">
             Contact
           </Link>
@@ -67,6 +70,13 @@ export function Navbar() {
               onClick={() => setIsOpen(false)}
             >
               About
+            </Link>
+            <Link
+              href="/faq"
+              className="text-white text-2xl font-display hover:text-[#8B3A62] transition-colors"
+              onClick={() => setIsOpen(false)}
+            >
+              FAQ
             </Link>
             <Link
               href="/contact"

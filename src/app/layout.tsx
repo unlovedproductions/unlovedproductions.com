@@ -23,11 +23,51 @@ const jetbrainsMono = JetBrains_Mono({
 
 export const metadata: Metadata = {
   title: "unlovedproductions — Built for the ones nobody built for",
-  description: "A product studio building tools for creators, privacy seekers, independent operators, and anyone ignored by the software industry.",
+  description: "A product studio building tools for creators, privacy seekers, independent operators, and anyone ignored by the software industry. Five products: KDP Creator Suite, Ghost Protocol, ReviveHQ, KDP Fast Launch, Puente.",
+  keywords: ["unlovedproductions", "indie software", "product studio", "tools", "creators", "privacy", "deals", "translation"],
+  authors: [{ name: "unlovedproductions" }],
+  creator: "unlovedproductions",
+  formatDetection: {
+    email: false,
+    telephone: false,
+    address: false,
+  },
   openGraph: {
     title: "unlovedproductions",
     description: "Built for the ones nobody built for.",
     type: "website",
+    url: "https://unlovedproductions.com",
+    siteName: "unlovedproductions",
+    images: [
+      {
+        url: "https://unlovedproductions.com/og/home.png",
+        width: 1200,
+        height: 630,
+        alt: "unlovedproductions",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "unlovedproductions",
+    description: "Built for the ones nobody built for.",
+    images: ["https://unlovedproductions.com/og/home.png"],
+    creator: "@unlovedprod",
+    site: "@unlovedprod",
+  },
+  alternates: {
+    canonical: "https://unlovedproductions.com",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    nocache: false,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
   },
 };
 
@@ -36,8 +76,69 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  // Organization Schema for SEO/GEO
+  const organizationSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Organization',
+    name: 'unlovedproductions',
+    url: 'https://unlovedproductions.com',
+    logo: 'https://unlovedproductions.com/logo.png',
+    description: 'A product studio building tools for creators, privacy seekers, independent operators, and anyone ignored by the software industry.',
+    sameAs: [
+      'https://twitter.com/unlovedprod',
+      'https://github.com/unlovedproductions',
+    ],
+    contact: {
+      '@type': 'ContactPoint',
+      contactType: 'Customer Support',
+      email: 'hello@unlovedproductions.com',
+    },
+    address: {
+      '@type': 'PostalAddress',
+      addressCountry: 'US',
+    },
+  };
+
+  // Website Schema for SEO
+  const websiteSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    url: 'https://unlovedproductions.com',
+    name: 'unlovedproductions',
+    description: 'Product studio for underserved markets',
+    potentialAction: {
+      '@type': 'SearchAction',
+      target: {
+        '@type': 'EntryPoint',
+        urlTemplate: 'https://unlovedproductions.com/search?q={search_term_string}',
+      },
+      'query-input': 'required name=search_term_string',
+    },
+  };
+
   return (
     <html lang="en" suppressHydrationWarning>
+      <head>
+        {/* Organization Schema */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+        />
+        {/* Website Schema */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
+        />
+        {/* Additional SEO Meta Tags */}
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="theme-color" content="#0a0a0a" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+        <meta name="apple-mobile-web-app-title" content="unlovedproductions" />
+        {/* Preconnect to external services */}
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+      </head>
       <body
         className={`${inter.variable} ${bebasNeue.variable} ${jetbrainsMono.variable} antialiased dark`}
       >
