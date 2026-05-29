@@ -1,0 +1,11 @@
+User-agent: *
+Allow: /
+Disallow: /.next/
+Disallow: /api/
+Allow: /api/hello
+
+# Sitemap location
+Sitemap: https://unlovedproductions.com/sitemap.xml
+
+# Crawl delay (optional - be nice to servers)
+Crawl-delay: 1
