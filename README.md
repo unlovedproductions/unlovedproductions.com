@@ -1,3 +1,9 @@
-# Next.js Web App Boilerplate
+# unlovedproductions.com
 
-Next.js boilerplate for building web applications. Includes theme system, UI components, hooks, and API patterns.
+Next.js application for the Unloved Productions web presence.
+
+## Operational docs
+
+- `docs/RECOVERY.md` — disaster-recovery and rebuild path
+- `docs/RUNBOOK.md` — startup/build/lint operational checks
+- `docs/ARCHITECTURE.md` — repository and runtime structure
