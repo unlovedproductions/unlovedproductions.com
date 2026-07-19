@@ -196,21 +196,16 @@ npm run dev
 # Visit http://localhost:3000
 ```
 
-### Production Build
+### Deployment
+Production host: **Vercel** (`unlovedproductions.com` project, Git-connected). See [`docs/RUNBOOK.md`](docs/RUNBOOK.md) for DNS records and verification commands.
+
 ```bash
 # Build for production
 npm run build
 
-# Start production server
+# Start production server locally
 npm start
 ```
-
-### Deployment Platforms
-This site is ready for deployment on:
-- **Vercel** (recommended for Next.js)
-- **Netlify**
-- **AWS Amplify**
-- Any Node.js hosting (with `npm run build` + `npm start`)
 
 ### Configuration for Formspree
 1. Go to formspree.io
@@ -280,9 +275,8 @@ This site is ready for deployment on:
    - Replace placeholder email in contact page and footer
 
 5. **Deploy**
-   - Push to GitHub
-   - Connect to Vercel for automatic deployments
-   - Domain: Set custom domain in hosting dashboard
+   - Push to GitHub (Vercel auto-deploys production)
+   - Confirm Namecheap DNS points apex + `www` at Vercel (see `docs/RUNBOOK.md`)
 
 ---
 
