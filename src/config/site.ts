@@ -3,8 +3,8 @@ export const siteConfig = {
   description: "Built for the ones nobody built for.",
   url: "https://unlovedproductions.com",
   links: {
-    github: "https://github.com",
-    twitter: "https://twitter.com",
+    github: "https://github.com/unlovedproductions",
+    twitter: "https://twitter.com/unlovedprod",
   },
 };
 
@@ -68,7 +68,7 @@ export const products = [
     tagline: "14-day system for publishing your first KDP book",
     description: "14-day system for publishing your first KDP book with zero paid tools. Niche validation, Canva interior design, cover creation, listing optimization. Includes Niche Tracker, Keyword Swipe File, 30-task checklist.",
     cta: "Download Free",
-    ctaUrl: "#download",
+    ctaUrl: "/contact?subject=download",
     image: "/products/kdp-fast-launch.png",
     order: 4,
   },
@@ -86,7 +86,7 @@ export const products = [
     ],
     price: "[Price]",
     cta: "Get Puente",
-    ctaUrl: "https://gumroad.com",
+    ctaUrl: "/contact?subject=puente",
     image: "/products/puente.png",
     order: 5,
   },

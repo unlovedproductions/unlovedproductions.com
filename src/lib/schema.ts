@@ -2,6 +2,41 @@
 
 const baseUrl = 'https://unlovedproductions.com';
 
+type ProductInput = {
+  id: string;
+  name: string;
+  description: string;
+  category: string;
+  ctaUrl?: string;
+  primaryCtaUrl?: string;
+  image?: string;
+  pricing?: Array<{ tier: string; details: string }>;
+  valueLadder?: Array<{ title: string; price: string }>;
+  tiers?: string[];
+};
+
+function getOfferPrice(product: ProductInput): string {
+  if (product.pricing?.some((tier) => tier.tier.toLowerCase() === 'free')) {
+    return '0';
+  }
+  if (product.tiers?.includes('Free')) {
+    return '0';
+  }
+  const ladderPrice = product.valueLadder?.[0]?.price?.replace(/[^0-9.]/g, '');
+  if (ladderPrice) {
+    return ladderPrice;
+  }
+  return '0';
+}
+
+function getOfferUrl(product: ProductInput): string {
+  const url = product.ctaUrl ?? product.primaryCtaUrl ?? `/products/${product.id}`;
+  if (url.startsWith('http')) {
+    return url;
+  }
+  return `${baseUrl}${url.startsWith('/') ? url : `/${url}`}`;
+}
+
 export const organizationSchema = {
   '@context': 'https://schema.org',
   '@type': 'Organization',
@@ -13,7 +48,7 @@ export const organizationSchema = {
     'https://twitter.com/unlovedprod',
     'https://github.com/unlovedproductions',
   ],
-  contact: {
+  contactPoint: {
     '@type': 'ContactPoint',
     contactType: 'Customer Support',
     email: 'hello@unlovedproductions.com',
@@ -24,16 +59,18 @@ export const organizationSchema = {
   },
 };
 
-export const productSchema = (product: any) => ({
+export const productSchema = (product: ProductInput) => ({
   '@context': 'https://schema.org',
   '@type': 'Product',
   name: product.name,
   description: product.description,
   url: `${baseUrl}/products/${product.id}`,
   category: product.category,
+  image: `${baseUrl}${product.image ?? '/og/default.png'}`,
   offers: {
     '@type': 'Offer',
-    url: product.ctaUrl,
+    url: getOfferUrl(product),
+    price: getOfferPrice(product),
     priceCurrency: 'USD',
     availability: 'https://schema.org/InStock',
   },
@@ -42,12 +79,17 @@ export const productSchema = (product: any) => ({
 export const breadcrumbSchema = (items: Array<{ name: string; url?: string }>) => ({
   '@context': 'https://schema.org',
   '@type': 'BreadcrumbList',
-  itemListElement: items.map((item, idx) => ({
-    '@type': 'ListItem',
-    position: idx + 1,
-    name: item.name,
-    item: item.url || undefined,
-  })),
+  itemListElement: items.map((item, idx) => {
+    const listItem: Record<string, unknown> = {
+      '@type': 'ListItem',
+      position: idx + 1,
+      name: item.name,
+    };
+    if (item.url) {
+      listItem.item = item.url;
+    }
+    return listItem;
+  }),
 });
 
 export const faqSchema = (faqs: Array<{ question: string; answer: string }>) => ({
@@ -69,14 +111,6 @@ export const websiteSchema = {
   url: baseUrl,
   name: 'unlovedproductions',
   description: 'Product studio for underserved markets',
-  potentialAction: {
-    '@type': 'SearchAction',
-    target: {
-      '@type': 'EntryPoint',
-      urlTemplate: `${baseUrl}/search?q={search_term_string}`,
-    },
-    'query-input': 'required name=search_term_string',
-  },
 };
 
 // AEO: Direct answer content for common questions
@@ -131,7 +165,7 @@ export const localBusinessSchema = {
 };
 
 // Service schema for each product
-export const serviceSchema = (product: any) => ({
+export const serviceSchema = (product: ProductInput) => ({
   '@context': 'https://schema.org',
   '@type': 'Service',
   name: product.name,

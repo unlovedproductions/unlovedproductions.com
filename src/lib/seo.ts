@@ -40,12 +40,17 @@ export const breadcrumb = (items: { name: string; url?: string }[]) => {
   return {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
-    itemListElement: items.map((item, idx) => ({
-      '@type': 'ListItem',
-      position: idx + 1,
-      name: item.name,
-      ...(item.url && { item: item.url }),
-    })),
+    itemListElement: items.map((item, idx) => {
+      const listItem: Record<string, unknown> = {
+        '@type': 'ListItem',
+        position: idx + 1,
+        name: item.name,
+      };
+      if (item.url) {
+        listItem.item = item.url;
+      }
+      return listItem;
+    }),
   };
 };
 

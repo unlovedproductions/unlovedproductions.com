@@ -79,13 +79,6 @@ export function generateMetadata(options: PageMetadataOptions): Metadata {
     },
     alternates: {
       canonical: url,
-      languages: {
-        'en-US': `${baseUrl}/en${path}`,
-      },
-    },
-    verification: {
-      google: 'google-site-verification-code',
-      yandex: 'yandex-verification-code',
     },
     robots: {
       index: true,
@@ -124,20 +117,33 @@ export function generateBreadcrumbMetadata(items: Array<{ name: string; url: str
   };
 }
 
-export function generateProductMetadata(product: any) {
+type ProductMetadataInput = {
+  id: string;
+  name: string;
+  tagline: string;
+  description: string;
+  category: string;
+};
+
+export function generateProductMetadata(product: ProductMetadataInput) {
   const keywords = [
     product.category.toLowerCase(),
     product.name.toLowerCase(),
     product.tagline.toLowerCase(),
   ];
 
+  const description =
+    product.description.length <= 160
+      ? product.description
+      : `${product.description.slice(0, 157)}...`;
+
   return generateMetadata({
     title: product.name,
-    description: product.tagline,
+    description,
     path: `/products/${product.id}`,
     keywords,
-    type: 'product',
-    image: `${baseUrl}/og/${product.id}.png`,
+    type: 'website',
+    image: defaultImage,
   });
 }
 

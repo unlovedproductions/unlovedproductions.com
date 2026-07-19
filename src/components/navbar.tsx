@@ -36,7 +36,7 @@ export function Navbar() {
         {/* Desktop CTA */}
         <div className="hidden md:flex">
           <a
-            href="#products"
+            href="/#products"
             className="border border-[#8B3A62] text-[#8B3A62] px-5 py-2 text-sm font-medium hover:bg-[#8B3A62] hover:text-white transition-colors"
           >
             See What We Build
@@ -86,7 +86,7 @@ export function Navbar() {
               Contact
             </Link>
             <a
-              href="#products"
+              href="/#products"
               className="border border-[#8B3A62] text-[#8B3A62] px-6 py-3 text-lg font-medium hover:bg-[#8B3A62] hover:text-white transition-colors"
               onClick={() => setIsOpen(false)}
             >
