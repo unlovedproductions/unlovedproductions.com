@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { ArrowRight } from 'lucide-react';
 import { Navbar } from '@/components/navbar';
+import { ProductImage } from '@/components/product-image';
 import { products } from '@/config/site';
 import { productSchema } from '@/lib/schema';
 
@@ -113,6 +114,13 @@ export default async function ProductPage({ params }: Props) {
                 </div>
               )}
 
+              {'price' in product && product.price && (
+                <div className="mb-8">
+                  <h2 className="text-sm uppercase tracking-widest text-[#8B3A62] mb-4">Price</h2>
+                  <p className="text-[#a0a0a0]">{product.price}</p>
+                </div>
+              )}
+
               {'tiers' in product && product.tiers && (
                 <div className="mb-8">
                   <h2 className="text-sm uppercase tracking-widest text-[#8B3A62] mb-4">Tiers</h2>
@@ -143,11 +151,8 @@ export default async function ProductPage({ params }: Props) {
               </div>
             </div>
 
-            <div className="bg-[#111111] border border-[#1f1f1f] min-h-[400px] flex items-center justify-center">
-              <div className="text-center">
-                <p className="text-[#808080] text-sm">Product Mockup</p>
-                <p className="text-[#606060] text-xs mt-2">{product.name}</p>
-              </div>
+            <div className="bg-[#111111] border border-[#1f1f1f] min-h-[400px] overflow-hidden">
+              <ProductImage productId={product.id} className="min-h-[400px]" priority />
             </div>
           </div>
 

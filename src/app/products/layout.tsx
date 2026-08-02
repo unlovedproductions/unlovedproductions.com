@@ -1,11 +1,13 @@
 import type { Metadata } from 'next';
 import { generateMetadata as buildMetadata } from '@/lib/metadata';
+import { ogImages } from '@/lib/images';
 
 export const metadata: Metadata = buildMetadata({
   title: 'Products',
   description:
     'Explore five tools from unlovedproductions — KDP Creator Suite, Ghost Protocol, ReviveHQ, KDP Fast Launch, and Puente. Built for creators, privacy, and indie operators.',
   path: '/products',
+  image: ogImages.products.fallback,
 });
 
 export default function ProductsLayout({ children }: { children: React.ReactNode }) {

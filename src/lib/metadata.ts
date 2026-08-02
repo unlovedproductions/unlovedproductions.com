@@ -30,6 +30,7 @@ export function generateMetadata(options: PageMetadataOptions): Metadata {
 
   const url = `${baseUrl}${path}`;
   const fullTitle = `${title} — unlovedproductions`;
+  const imageUrl = image.startsWith('http') ? image : `${baseUrl}${image}`;
 
   return {
     title: fullTitle,
@@ -58,7 +59,7 @@ export function generateMetadata(options: PageMetadataOptions): Metadata {
       type: type as 'website' | 'article',
       images: [
         {
-          url: image,
+          url: imageUrl,
           width: 1200,
           height: 630,
           alt: title,
@@ -73,7 +74,7 @@ export function generateMetadata(options: PageMetadataOptions): Metadata {
       card: 'summary_large_image',
       title: fullTitle,
       description,
-      images: [image],
+      images: [imageUrl],
       creator: '@unlovedprod',
       site: '@unlovedprod',
     },

@@ -113,7 +113,10 @@ export default function Home() {
             {upcomingProducts.map((item, idx) => (
               <div key={idx} className="border border-dashed border-[#1f1f1f] bg-[#0d0d0d] p-8 flex flex-col items-center justify-center min-h-[200px]">
                 <p className="text-xs uppercase tracking-widest text-[#8B3A62] mb-3">Coming Soon</p>
-                <p className="text-sm text-[#a0a0a0] text-center">{item.title}</p>
+                <p className="font-display text-xl text-white mb-2">{item.title}</p>
+                {'description' in item && item.description && (
+                  <p className="text-sm text-[#a0a0a0] text-center">{item.description}</p>
+                )}
               </div>
             ))}
           </div>

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Bebas_Neue, Inter, JetBrains_Mono } from 'next/font/google';
 import "./globals.css";
 import { ThemeProvider } from "@/app/providers/theme-provider";
+import { Analytics } from "@/components/analytics";
 
 const inter = Inter({
   variable: "--font-sans",
@@ -57,6 +58,10 @@ export const metadata: Metadata = {
   },
   alternates: {
     canonical: "https://unlovedproductions.com",
+    languages: {
+      "en-US": "https://unlovedproductions.com",
+      "x-default": "https://unlovedproductions.com",
+    },
   },
   robots: {
     index: true,
@@ -134,6 +139,7 @@ export default function RootLayout({
       <body
         className={`${inter.variable} ${bebasNeue.variable} ${jetbrainsMono.variable} antialiased dark`}
       >
+        <Analytics />
         <ThemeProvider
           attribute="class"
           defaultTheme="dark"

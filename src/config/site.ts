@@ -84,7 +84,7 @@ export const products = [
       "Multiple Language Pairs",
       "One-Time Purchase",
     ],
-    price: "[Price]",
+    price: "One-time purchase",
     cta: "Get Puente",
     ctaUrl: "/contact?subject=puente",
     image: "/products/puente.png",
@@ -93,9 +93,9 @@ export const products = [
 ];
 
 export const upcomingProducts = [
-  { title: "Product Coming Soon" },
-  { title: "Product Coming Soon" },
-  { title: "Product Coming Soon" },
+  { title: "Signal", description: "Deal intelligence automation for indie operators" },
+  { title: "Shroud", description: "Privacy remediation workflows beyond manual opt-outs" },
+  { title: "Draft", description: "Creator publishing pipeline for solo publishers" },
 ];
 
 export const manifesto = `Most software gets built for the same people. Funded companies. Big teams. Obvious markets. unlovedproductions builds for everyone else — the solo publisher grinding KDP at midnight, the person who just found their address on 40 websites they never signed up for, the indie hacker who knows the best deals are the ones nobody listed, and the person who just needs to talk to someone in a different language without pulling out a credit card. We find the gaps. We build the tools. We ship.`;

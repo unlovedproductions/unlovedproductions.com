@@ -13,6 +13,7 @@ type ProductInput = {
   pricing?: Array<{ tier: string; details: string }>;
   valueLadder?: Array<{ title: string; price: string }>;
   tiers?: string[];
+  price?: string;
 };
 
 function getOfferPrice(product: ProductInput): string {
@@ -25,6 +26,10 @@ function getOfferPrice(product: ProductInput): string {
   const ladderPrice = product.valueLadder?.[0]?.price?.replace(/[^0-9.]/g, '');
   if (ladderPrice) {
     return ladderPrice;
+  }
+  const productPrice = product.price?.replace(/[^0-9.]/g, '');
+  if (productPrice) {
+    return productPrice;
   }
   return '0';
 }
@@ -183,7 +188,7 @@ export const serviceSchema = (product: ProductInput) => ({
   },
 });
 
-// Aggregate rating schema template
+// Aggregate rating schema template — use only with verified review data
 export const aggregateRatingSchema = (name: string, ratingValue: number, reviewCount: number) => ({
   '@context': 'https://schema.org',
   '@type': 'Product',

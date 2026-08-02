@@ -2,9 +2,9 @@
 // All product mockups and assets should use WebP format with fallbacks
 
 export const productImages = {
-  'kdp-suite': {
-    src: '/products/kdp-suite.webp',
-    fallback: '/products/kdp-suite.png',
+  'kdp-creator-suite': {
+    src: '/products/kdp-creator-suite.webp',
+    fallback: '/products/kdp-creator-suite.png',
     alt: 'KDP Creator Suite dashboard showing PDF processing and analytics features for Amazon KDP publishers',
     width: 1200,
     height: 800,
@@ -16,7 +16,7 @@ export const productImages = {
     width: 1200,
     height: 800,
   },
-  'revivehq': {
+  revivehq: {
     src: '/products/revivehq.webp',
     fallback: '/products/revivehq.png',
     alt: 'ReviveHQ dashboard showing abandoned SaaS deals scored across GitHub activity and revenue indicators',
@@ -30,7 +30,7 @@ export const productImages = {
     width: 1200,
     height: 800,
   },
-  'puente': {
+  puente: {
     src: '/products/puente.webp',
     fallback: '/products/puente.png',
     alt: 'Puente offline translator interface showing speech recognition and multiple language pair options',

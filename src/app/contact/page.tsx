@@ -5,8 +5,10 @@ import { Navbar } from '@/components/navbar';
 import { Mail } from 'lucide-react';
 import { useForm, ValidationError } from '@formspree/react';
 
+const formspreeFormId = process.env.NEXT_PUBLIC_FORMSPREE_FORM_ID ?? 'mnjrrqoa';
+
 export default function ContactPage() {
-  const [state, handleSubmit] = useForm('mnjrrqoa');
+  const [state, handleSubmit] = useForm(formspreeFormId);
 
   return (
     <>
