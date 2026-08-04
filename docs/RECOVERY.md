@@ -50,5 +50,5 @@ Rebuild from source:
 This site is operationally independent from APF/ShadowCast/Mission Control.
 
 ## 11) Last Verified
-- Date: 2026-07-09
-- Commit: `acca24c`
+- Date: 2026-08-02
+- Commit: `c2b8f88`
