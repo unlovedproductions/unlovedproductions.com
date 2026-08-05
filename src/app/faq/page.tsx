@@ -8,11 +8,13 @@ import { useState } from 'react';
 const faqs = [
   {
     question: 'What is unlovedproductions?',
-    answer: 'unlovedproductions is a product studio building tools for creators, privacy seekers, independent operators, and anyone ignored by the software industry. We focus on finding gaps in the market and shipping products that serve underserved audiences.',
+    answer:
+      'unlovedproductions is a product studio. We find underserved markets, build the missing tools, and ship. Our audience is creators, privacy seekers, independent operators, and anyone mainstream software ignores.',
   },
   {
     question: 'What products does unlovedproductions offer?',
-    answer: 'We offer five core products: KDP Creator Suite (publishing software), Ghost Protocol (digital privacy), ReviveHQ (deal intelligence), KDP Fast Launch (free system), and Puente (offline translator). Each solves a specific problem for our target audiences.',
+    answer:
+      'We currently ship five products: (1) KDP Creator Suite — publishing software for Amazon KDP creators; (2) Ghost Protocol — digital privacy audits across 47+ data broker sites; (3) ReviveHQ — deal intelligence for abandoned SaaS; (4) KDP Fast Launch — free 14-day publishing system; (5) Puente — offline translator (one-time purchase).',
   },
   {
     question: 'How much does KDP Creator Suite cost?',
@@ -32,7 +34,7 @@ const faqs = [
   },
   {
     question: 'What is Puente?',
-    answer: 'Puente (Spanish for "bridge") is a fully offline translator for healthcare workers, travelers, and service industry professionals. One-time purchase, supports multiple language pairs, includes speech recognition.',
+    answer: 'Puente (Spanish for "bridge") is a fully offline translator for healthcare workers, travelers, and service industry professionals. One-time purchase (contact for current price), supports multiple language pairs, includes speech recognition.',
   },
   {
     question: 'How do I contact unlovedproductions?',
@@ -45,6 +47,11 @@ const faqs = [
   {
     question: 'Can I use these products for commercial purposes?',
     answer: 'Yes, most of our products are designed for commercial and professional use. Check specific product terms for details on licensing and commercial use rights.',
+  },
+  {
+    question: 'How do you handle corrections or outdated product details?',
+    answer:
+      'Email hello@unlovedproductions.com with the page URL and the correction. We update product pages and this FAQ when pricing, features, or claims change.',
   },
 ];
 
@@ -89,7 +96,8 @@ export default function FAQPage() {
         <section className="max-w-3xl mx-auto px-6 py-12 border-b border-[#1a1a1a]">
           <h1 className="font-display text-5xl md:text-6xl mb-4">Frequently Asked Questions</h1>
           <p className="text-[#a0a0a0] text-lg">
-            Find answers to common questions about unlovedproductions and our products.
+            Direct answers about the studio we run and the five products we ship — pricing,
+            who each tool is for, and how to reach us.
           </p>
         </section>
 
@@ -103,7 +111,8 @@ export default function FAQPage() {
               >
                 <button
                   onClick={() => setOpenIndex(openIndex === index ? null : index)}
-                  className="w-full px-6 py-4 text-left flex items-center justify-between hover:bg-[#1a1a1a] transition-colors"
+                  className="w-full px-6 py-4 text-left flex items-center justify-between hover:bg-[#1a1a1a] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#8B3A62] focus-visible:ring-offset-2 focus-visible:ring-offset-[#111111]"
+                  aria-expanded={openIndex === index}
                 >
                   <h3 className="font-medium text-[#ffffff]">{faq.question}</h3>
                   <ChevronDown

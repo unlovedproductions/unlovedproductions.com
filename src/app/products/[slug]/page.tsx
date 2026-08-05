@@ -63,6 +63,7 @@ export default async function ProductPage({ params }: Props) {
         <section className="max-w-7xl mx-auto px-6 py-20">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
             <div>
+              <h2 className="text-sm uppercase tracking-widest text-[#8B3A62] mb-4">Overview</h2>
               <p className="text-[#a0a0a0] text-lg leading-relaxed mb-8">{product.description}</p>
 
               {'valueLadder' in product && product.valueLadder && (

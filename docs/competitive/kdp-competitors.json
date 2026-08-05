@@ -1,0 +1,91 @@
+{
+  "your_product": {
+    "name": "KDP Creator Suite",
+    "scores": {
+      "positioning_clarity": 7,
+      "product_breadth": 8,
+      "pricing_transparency": 6,
+      "trust_eeat": 4,
+      "seo_aeo": 5,
+      "ux_polish": 6,
+      "distribution": 5
+    },
+    "pricing": {
+      "model": "Free / Pro / Studio",
+      "notes": "Tiers named on studio site; detail lives on kdpsuite.com"
+    },
+    "strengths": [
+      "All-in-one pitch (PDF, compliance, coloring, analytics)",
+      "Clear Free/Pro/Studio ladder"
+    ],
+    "weaknesses": [
+      "Trust/social proof thin vs incumbents",
+      "Studio site still uses placeholder mockups"
+    ]
+  },
+  "competitors": [
+    {
+      "name": "BookBolt",
+      "scores": {
+        "positioning_clarity": 8,
+        "product_breadth": 7,
+        "pricing_transparency": 8,
+        "trust_eeat": 7,
+        "seo_aeo": 7,
+        "ux_polish": 7,
+        "distribution": 8
+      },
+      "pricing": { "model": "subscription tiers", "notes": "Established KDP tooling brand" },
+      "strengths": ["Category awareness", "Keyword/research tooling"],
+      "weaknesses": ["Less 'suite' narrative for beginners"]
+    },
+    {
+      "name": "Publisher Rocket",
+      "scores": {
+        "positioning_clarity": 9,
+        "product_breadth": 5,
+        "pricing_transparency": 8,
+        "trust_eeat": 8,
+        "seo_aeo": 8,
+        "ux_polish": 7,
+        "distribution": 8
+      },
+      "pricing": { "model": "one-time / known creator brand", "notes": "Dave Chesson / Kindlepreneur ecosystem" },
+      "strengths": ["Authority content + SEO", "Clear research use-case"],
+      "weaknesses": ["Narrower feature set than full suite"]
+    },
+    {
+      "name": "Canva (KDP workflow)",
+      "scores": {
+        "positioning_clarity": 6,
+        "product_breadth": 9,
+        "pricing_transparency": 8,
+        "trust_eeat": 9,
+        "seo_aeo": 9,
+        "ux_polish": 9,
+        "distribution": 10
+      },
+      "pricing": { "model": "freemium + Pro", "notes": "Not KDP-specific; used for interiors/covers" },
+      "strengths": ["Massive distribution", "Polished UX", "Trust by default"],
+      "weaknesses": ["Not KDP-compliance focused", "Not a publishing suite"]
+    }
+  ],
+  "dimensions": [
+    "positioning_clarity",
+    "product_breadth",
+    "pricing_transparency",
+    "trust_eeat",
+    "seo_aeo",
+    "ux_polish",
+    "distribution"
+  ],
+  "weights": {
+    "positioning_clarity": 1.5,
+    "product_breadth": 1.2,
+    "pricing_transparency": 1.5,
+    "trust_eeat": 2.0,
+    "seo_aeo": 1.5,
+    "ux_polish": 1.0,
+    "distribution": 1.2
+  }
+}

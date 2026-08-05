@@ -18,7 +18,7 @@ export const products = [
     tiers: ["Free", "Pro", "Studio"],
     cta: "Go to KDP Creator Suite",
     ctaUrl: "https://kdpsuite.com",
-    image: "/products/kdp-suite.png",
+    image: "/products/kdp-creator-suite.jpg",
     order: 1,
   },
   {
@@ -37,7 +37,7 @@ export const products = [
     secondaryCtaUrl: "https://privacy-exposure-quiz.netlify.app",
     primaryCta: "Start Ghost Protocol",
     primaryCtaUrl: "https://ghostprotocollanding.netlify.app",
-    image: "/products/ghost-protocol.png",
+    image: "/products/ghost-protocol.jpg",
     order: 2,
   },
   {
@@ -58,7 +58,7 @@ export const products = [
     ],
     cta: "Browse Live Deals",
     ctaUrl: "https://revivehq.polsia.app",
-    image: "/products/revivehq.png",
+    image: "/products/revivehq.jpg",
     order: 3,
   },
   {
@@ -69,7 +69,7 @@ export const products = [
     description: "14-day system for publishing your first KDP book with zero paid tools. Niche validation, Canva interior design, cover creation, listing optimization. Includes Niche Tracker, Keyword Swipe File, 30-task checklist.",
     cta: "Download Free",
     ctaUrl: "/contact?subject=download",
-    image: "/products/kdp-fast-launch.png",
+    image: "/products/kdp-fast-launch.jpg",
     order: 4,
   },
   {
@@ -84,10 +84,10 @@ export const products = [
       "Multiple Language Pairs",
       "One-Time Purchase",
     ],
-    price: "One-time purchase",
+    price: "One-time purchase — contact for current price",
     cta: "Get Puente",
     ctaUrl: "/contact?subject=puente",
-    image: "/products/puente.png",
+    image: "/products/puente.jpg",
     order: 5,
   },
 ];
@@ -101,19 +101,25 @@ export const upcomingProducts = [
 export const manifesto = `Most software gets built for the same people. Funded companies. Big teams. Obvious markets. unlovedproductions builds for everyone else — the solo publisher grinding KDP at midnight, the person who just found their address on 40 websites they never signed up for, the indie hacker who knows the best deals are the ones nobody listed, and the person who just needs to talk to someone in a different language without pulling out a credit card. We find the gaps. We build the tools. We ship.`;
 
 export const aboutContent = {
+  lede: `We build software for people mainstream vendors skip. In practice that means five shipped product lines — publishing tools for Amazon KDP creators, privacy remediation for personal data exposure, deal intelligence for abandoned SaaS, a free 14-day KDP launch system, and Puente, an offline translator we built first to talk with homeless Spanish speakers.`,
   act1: {
     title: "The Gap",
-    content: `Five underserved markets demand attention:
-    
-KDP creators building without proper tools. Personal data breaches exposing millions. Invisible SaaS deals waiting to be discovered. Beginners needing systems, not subscriptions. People needing real-world translation without a credit card.`,
+    content: `Five underserved markets demand attention:`,
+    bullets: [
+      "KDP creators building without proper tools",
+      "Personal data breaches exposing millions",
+      "Invisible SaaS deals waiting to be discovered",
+      "Beginners needing systems, not subscriptions",
+      "People needing real-world translation without a credit card",
+    ],
   },
   act2: {
     title: "The Decision",
-    content: `unlovedproductions was built because the alternatives didn't exist. Puente came first — built to talk with homeless Spanish speakers in a way that mattered. Not inspirational-poster language. Just honest, direct impact.`,
+    content: `We started unlovedproductions because the alternatives did not exist. Puente came first — we built it to talk with homeless Spanish speakers in a way that mattered. Not inspirational-poster language. Just honest, direct impact. From that pattern we kept finding gaps and shipping tools.`,
   },
   act3: {
     title: "What This Is",
-    content: `A product studio. No clients. Just systems, products, and shipping. We build for the people everyone else ignores.`,
+    content: `A product studio. No clients. Just systems, products, and shipping. We build for the people everyone else ignores. Corrections or factual updates: email hello@unlovedproductions.com.`,
   },
   closingLine: "If we're building something you need — or something you think we should build — we want to hear from you.",
 };

@@ -1,41 +1,41 @@
 // Image optimization utilities
-// All product mockups and assets should use WebP format with fallbacks
+// Prefer compressed JPEG for product/founder assets; OG stays PNG 1200x630
 
 export const productImages = {
   'kdp-creator-suite': {
     src: '/products/kdp-creator-suite.webp',
-    fallback: '/products/kdp-creator-suite.png',
+    fallback: '/products/kdp-creator-suite.jpg',
     alt: 'KDP Creator Suite dashboard showing PDF processing and analytics features for Amazon KDP publishers',
-    width: 1200,
-    height: 800,
+    width: 1000,
+    height: 1000,
   },
   'ghost-protocol': {
     src: '/products/ghost-protocol.webp',
-    fallback: '/products/ghost-protocol.png',
+    fallback: '/products/ghost-protocol.jpg',
     alt: 'Ghost Protocol interface displaying personal data exposure audit across 47+ data broker sites',
-    width: 1200,
-    height: 800,
+    width: 1000,
+    height: 1000,
   },
   revivehq: {
     src: '/products/revivehq.webp',
-    fallback: '/products/revivehq.png',
+    fallback: '/products/revivehq.jpg',
     alt: 'ReviveHQ dashboard showing abandoned SaaS deals scored across GitHub activity and revenue indicators',
-    width: 1200,
-    height: 800,
+    width: 1000,
+    height: 1000,
   },
   'kdp-fast-launch': {
     src: '/products/kdp-fast-launch.webp',
-    fallback: '/products/kdp-fast-launch.png',
+    fallback: '/products/kdp-fast-launch.jpg',
     alt: 'KDP Fast Launch System resource pack including niche tracker, keyword swipe file, and 30-task checklist',
-    width: 1200,
-    height: 800,
+    width: 1000,
+    height: 1000,
   },
   puente: {
     src: '/products/puente.webp',
-    fallback: '/products/puente.png',
+    fallback: '/products/puente.jpg',
     alt: 'Puente offline translator interface showing speech recognition and multiple language pair options',
-    width: 1200,
-    height: 800,
+    width: 1000,
+    height: 1000,
   },
 };
 
@@ -64,7 +64,7 @@ export const ogImages = {
 
 export const founderImage = {
   src: '/founder/photo.webp',
-  fallback: '/founder/photo.png',
+  fallback: '/founder/photo.jpg',
   alt: 'Founder of unlovedproductions, high contrast portrait photograph',
   width: 600,
   height: 600,

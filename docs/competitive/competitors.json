@@ -1,0 +1,102 @@
+{
+  "your_product": {
+    "name": "unlovedproductions",
+    "scores": {
+      "positioning_clarity": 8,
+      "product_breadth": 7,
+      "pricing_transparency": 4,
+      "trust_eeat": 4,
+      "seo_aeo": 6,
+      "ux_polish": 5,
+      "distribution": 4
+    },
+    "pricing": {
+      "model": "mixed (free + one-time + SaaS via product sites)",
+      "notes": "Studio site has weak price disclosure; Puente still soft-priced"
+    },
+    "strengths": [
+      "Clear underserved-market positioning and manifesto",
+      "Five concrete products spanning publishing, privacy, deals, translation",
+      "FAQ + schema foundation already shipped"
+    ],
+    "weaknesses": [
+      "Thin trust signals (no reviews, placeholder founder/media)",
+      "Pricing transparency uneven across products",
+      "Limited distribution vs platform competitors"
+    ]
+  },
+  "competitors": [
+    {
+      "name": "Levels.io",
+      "scores": {
+        "positioning_clarity": 9,
+        "product_breadth": 8,
+        "pricing_transparency": 8,
+        "trust_eeat": 7,
+        "seo_aeo": 7,
+        "ux_polish": 7,
+        "distribution": 9
+      },
+      "pricing": {
+        "model": "product-by-product SaaS / one-time",
+        "notes": "Public pricing on each product; strong indie brand"
+      },
+      "strengths": ["Audience ownership", "Ship velocity narrative", "SEO on product domains"],
+      "weaknesses": ["Not a holding-company brand page", "Uneven product depth"]
+    },
+    {
+      "name": "Tiny",
+      "scores": {
+        "positioning_clarity": 7,
+        "product_breadth": 9,
+        "pricing_transparency": 5,
+        "trust_eeat": 8,
+        "seo_aeo": 6,
+        "ux_polish": 7,
+        "distribution": 8
+      },
+      "pricing": {
+        "model": "portfolio / acquisition holding company",
+        "notes": "Company-level site; pricing lives on portfolio products"
+      },
+      "strengths": ["Capital + acquisition credibility", "Broad portfolio"],
+      "weaknesses": ["Less indie-creator emotional positioning", "Studio site not conversion-led"]
+    },
+    {
+      "name": "Gumroad",
+      "scores": {
+        "positioning_clarity": 8,
+        "product_breadth": 6,
+        "pricing_transparency": 7,
+        "trust_eeat": 7,
+        "seo_aeo": 7,
+        "ux_polish": 8,
+        "distribution": 9
+      },
+      "pricing": {
+        "model": "marketplace take-rate for creators",
+        "notes": "Platform competitor for distribution, not product studio twin"
+      },
+      "strengths": ["Creator distribution network", "Polished product UX"],
+      "weaknesses": ["Not a multi-product studio brand", "Commoditized marketplace feel"]
+    }
+  ],
+  "dimensions": [
+    "positioning_clarity",
+    "product_breadth",
+    "pricing_transparency",
+    "trust_eeat",
+    "seo_aeo",
+    "ux_polish",
+    "distribution"
+  ],
+  "weights": {
+    "positioning_clarity": 1.5,
+    "product_breadth": 1.0,
+    "pricing_transparency": 1.5,
+    "trust_eeat": 2.0,
+    "seo_aeo": 1.5,
+    "ux_polish": 1.0,
+    "distribution": 1.2
+  }
+}

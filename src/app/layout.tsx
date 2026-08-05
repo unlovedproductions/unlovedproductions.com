@@ -35,7 +35,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: "unlovedproductions",
-    description: "Built for the ones nobody built for.",
+    description: "A product studio building tools for creators, privacy seekers, and indie operators ignored by mainstream software. Five products, zero compromises.",
     type: "website",
     url: "https://unlovedproductions.com",
     siteName: "unlovedproductions",
@@ -51,7 +51,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "unlovedproductions",
-    description: "Built for the ones nobody built for.",
+    description: "A product studio building tools for creators, privacy seekers, and indie operators ignored by mainstream software. Five products, zero compromises.",
     images: ["https://unlovedproductions.com/og/default.png"],
     creator: "@unlovedprod",
     site: "@unlovedprod",
