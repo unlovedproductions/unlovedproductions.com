@@ -14,7 +14,7 @@ const faqs = [
   {
     question: 'What products does unlovedproductions offer?',
     answer:
-      'We currently ship five products: (1) KDP Creator Suite — publishing software for Amazon KDP creators; (2) Ghost Protocol — digital privacy audits across 47+ data broker sites; (3) ReviveHQ — deal intelligence for abandoned SaaS; (4) KDP Fast Launch — free 14-day publishing system; (5) Puente — offline translator (one-time purchase).',
+      'We currently ship five products: (1) KDP Creator Suite — publishing software for Amazon KDP creators; (2) Ghost Protocol — digital privacy audits across 47+ data broker sites; (3) ReviveHQ — deal intelligence for abandoned SaaS; (4) KDP Fast Launch — free 14-day publishing system; (5) Puente — offline Android conversational interpreter for shared devices (request a demo).',
   },
   {
     question: 'How much does KDP Creator Suite cost?',
@@ -34,7 +34,8 @@ const faqs = [
   },
   {
     question: 'What is Puente?',
-    answer: 'Puente (Spanish for "bridge") is a fully offline translator for healthcare workers, travelers, and service industry professionals. One-time purchase (contact for current price), supports multiple language pairs, includes speech recognition.',
+    answer:
+      'Puente is an Android conversational interpreter for shared devices. Two people take turns speaking into one device; speech recognition and translation run on-device after setup. Supports Auto English ↔ Spanish plus manual EN↔ES / EN↔FR / EN↔DE, with exportable bilingual logs (TXT, PDF, CSV). Request a demo or contact sales at support@unlovedproductions.com.',
   },
   {
     question: 'How do I contact unlovedproductions?',

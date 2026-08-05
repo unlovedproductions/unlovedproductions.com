@@ -3,6 +3,7 @@ import { notFound } from 'next/navigation';
 import { ArrowRight } from 'lucide-react';
 import { Navbar } from '@/components/navbar';
 import { ProductImage } from '@/components/product-image';
+import { PuenteProductPage } from '@/components/puente-product-page';
 import { products } from '@/config/site';
 import { productSchema } from '@/lib/schema';
 
@@ -26,6 +27,10 @@ export default async function ProductPage({ params }: Props) {
   const product = products.find((p) => p.id === slug);
   if (!product) {
     notFound();
+  }
+
+  if (slug === 'puente') {
+    return <PuenteProductPage />;
   }
 
   const relatedProducts = products.filter((p) => p.id !== product.id).slice(0, 2);
@@ -115,10 +120,10 @@ export default async function ProductPage({ params }: Props) {
                 </div>
               )}
 
-              {'price' in product && product.price && (
+              {'price' in product && typeof (product as { price?: unknown }).price === 'string' && (
                 <div className="mb-8">
                   <h2 className="text-sm uppercase tracking-widest text-[#8B3A62] mb-4">Price</h2>
-                  <p className="text-[#a0a0a0]">{product.price}</p>
+                  <p className="text-[#a0a0a0]">{(product as { price: string }).price}</p>
                 </div>
               )}
 

@@ -127,6 +127,10 @@ type ProductMetadataInput = {
 };
 
 export function generateProductMetadata(product: ProductMetadataInput) {
+  if (product.id === 'puente') {
+    return generatePuenteMetadata();
+  }
+
   const keywords = [
     product.category.toLowerCase(),
     product.name.toLowerCase(),
@@ -145,6 +149,29 @@ export function generateProductMetadata(product: ProductMetadataInput) {
     keywords,
     type: 'website',
     image: defaultImage,
+  });
+}
+
+export function generatePuenteMetadata() {
+  const description =
+    'Puente is an offline Android conversational translator for face-to-face interpreting. English, Spanish, French, or German pairs—export bilingual logs without cloud dependency after setup.';
+
+  return generateMetadata({
+    title: 'Puente — Offline Android conversational translator',
+    description,
+    path: '/products/puente',
+    keywords: [
+      'offline translator',
+      'Android interpreter',
+      'shared device translation',
+      'English Spanish French German',
+      'on-device speech recognition',
+      'clinic hospitality translation',
+      'conversational interpreter',
+      'offline bilingual logs',
+    ],
+    type: 'product',
+    image: `${baseUrl}/products/puente.jpg`,
   });
 }
 

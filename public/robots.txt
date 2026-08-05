@@ -4,5 +4,27 @@ Disallow: /.next/
 Disallow: /api/
 Allow: /api/hello
 
+# AI crawlers — explicit allow for answer-engine citation
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
 # Sitemap location
 Sitemap: https://unlovedproductions.com/sitemap.xml
