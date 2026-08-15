@@ -8,14 +8,18 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ### Added
 
+- Full Puente product page with SEO/AEO schema and aligned copy (`c059bff`)
 - Competitive, AEO, frontend, and SEO audit artifacts under `docs/competitive/`, `docs/aeo/`, `docs/frontend/`, `docs/seo/`
 - Fact-first About/FAQ/Blog copy for AEO citation readiness
+- Tracked `.env.example` (Formspree / GA / optional GSC verification)
 
 ### Changed
 
+- Four-skill audit suite applied; high-priority site fixes shipped (`b9b857a`)
 - Compressed product/OG/founder media (JPEG product assets ~134KB; OG ~108KB)
 - Removed unnecessary `'use client'` from About and Products listing pages
 - Lengthened root Open Graph / Twitter descriptions
+- Added missing KDP Fast Launch product image
 
 ## [2026-08-02]
 

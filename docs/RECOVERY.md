@@ -13,7 +13,11 @@ This repository contains the unlovedproductions.com Next.js web application.
 - npm (lockfile present: `package-lock.json`)
 
 ## 4) Secrets Inventory (names only)
-No secret names are documented in this repo. Keep deployment secrets in your hosting platform and local env files only.
+- `NEXT_PUBLIC_FORMSPREE_FORM_ID`
+- `NEXT_PUBLIC_GA_MEASUREMENT_ID` (optional)
+- `NEXT_PUBLIC_GSC_VERIFICATION` (optional)
+
+Do not store secret values in docs. Keep values in Vercel env and local `.env` only.
 
 ## 5) Data To Back Up
 - Source code
@@ -50,5 +54,5 @@ Rebuild from source:
 This site is operationally independent from APF/ShadowCast/Mission Control.
 
 ## 11) Last Verified
-- Date: 2026-08-02
-- Commit: `c2b8f88`
+- Date: 2026-08-15
+- Commit: `c059bff`
