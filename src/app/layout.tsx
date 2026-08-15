@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Bebas_Neue, Inter, JetBrains_Mono } from 'next/font/google';
 import "./globals.css";
 import { ThemeProvider } from "@/app/providers/theme-provider";
+import { Analytics } from "@/components/analytics";
 
 const inter = Inter({
   variable: "--font-sans",
@@ -23,7 +24,7 @@ const jetbrainsMono = JetBrains_Mono({
 
 export const metadata: Metadata = {
   title: "unlovedproductions — Built for the ones nobody built for",
-  description: "A product studio building tools for creators, privacy seekers, independent operators, and anyone ignored by the software industry. Five products: KDP Creator Suite, Ghost Protocol, ReviveHQ, KDP Fast Launch, Puente.",
+  description: "A product studio building tools for creators, privacy seekers, and indie operators ignored by mainstream software. Five products, zero compromises.",
   keywords: ["unlovedproductions", "indie software", "product studio", "tools", "creators", "privacy", "deals", "translation"],
   authors: [{ name: "unlovedproductions" }],
   creator: "unlovedproductions",
@@ -34,13 +35,13 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: "unlovedproductions",
-    description: "Built for the ones nobody built for.",
+    description: "A product studio building tools for creators, privacy seekers, and indie operators ignored by mainstream software. Five products, zero compromises.",
     type: "website",
     url: "https://unlovedproductions.com",
     siteName: "unlovedproductions",
     images: [
       {
-        url: "https://unlovedproductions.com/og/home.png",
+        url: "https://unlovedproductions.com/og/default.png",
         width: 1200,
         height: 630,
         alt: "unlovedproductions",
@@ -50,13 +51,17 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "unlovedproductions",
-    description: "Built for the ones nobody built for.",
-    images: ["https://unlovedproductions.com/og/home.png"],
+    description: "A product studio building tools for creators, privacy seekers, and indie operators ignored by mainstream software. Five products, zero compromises.",
+    images: ["https://unlovedproductions.com/og/default.png"],
     creator: "@unlovedprod",
     site: "@unlovedprod",
   },
   alternates: {
     canonical: "https://unlovedproductions.com",
+    languages: {
+      "en-US": "https://unlovedproductions.com",
+      "x-default": "https://unlovedproductions.com",
+    },
   },
   robots: {
     index: true,
@@ -88,7 +93,7 @@ export default function RootLayout({
       'https://twitter.com/unlovedprod',
       'https://github.com/unlovedproductions',
     ],
-    contact: {
+    contactPoint: {
       '@type': 'ContactPoint',
       contactType: 'Customer Support',
       email: 'hello@unlovedproductions.com',
@@ -106,14 +111,6 @@ export default function RootLayout({
     url: 'https://unlovedproductions.com',
     name: 'unlovedproductions',
     description: 'Product studio for underserved markets',
-    potentialAction: {
-      '@type': 'SearchAction',
-      target: {
-        '@type': 'EntryPoint',
-        urlTemplate: 'https://unlovedproductions.com/search?q={search_term_string}',
-      },
-      'query-input': 'required name=search_term_string',
-    },
   };
 
   return (
@@ -142,6 +139,7 @@ export default function RootLayout({
       <body
         className={`${inter.variable} ${bebasNeue.variable} ${jetbrainsMono.variable} antialiased dark`}
       >
+        <Analytics />
         <ThemeProvider
           attribute="class"
           defaultTheme="dark"

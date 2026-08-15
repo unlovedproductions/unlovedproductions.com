@@ -1,9 +1,8 @@
-'use client';
-
 import Link from 'next/link';
 import { Navbar } from '@/components/navbar';
 import { products } from '@/config/site';
 import { ArrowRight } from 'lucide-react';
+import { ProductImage } from '@/components/product-image';
 
 export default function ProductsPage() {
   return (
@@ -125,12 +124,9 @@ export default function ProductsPage() {
                     </div>
                   </div>
 
-                  {/* Placeholder for visual */}
-                  <div className={`bg-[#111111] border border-[#1f1f1f] min-h-[400px] flex items-center justify-center ${idx % 2 === 1 ? 'md:order-1' : ''}`}>
-                    <div className="text-center">
-                      <p className="text-[#808080] text-sm">Product Mockup</p>
-                      <p className="text-[#606060] text-xs mt-2">{product.name}</p>
-                    </div>
+                  {/* Product visual */}
+                  <div className={`bg-[#111111] border border-[#1f1f1f] min-h-[400px] overflow-hidden ${idx % 2 === 1 ? 'md:order-1' : ''}`}>
+                    <ProductImage productId={product.id} className="min-h-[400px]" />
                   </div>
                 </div>
 

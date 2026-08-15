@@ -42,7 +42,7 @@ All features from the brief have been fully implemented and validated. The websi
    - Full-height contact form
    - Form fields: Name, Email, Subject dropdown, Message textarea
    - Custom field styling with mauve focus glow
-   - Formspree integration ready (requires endpoint)
+   - Formspree integration (env: `NEXT_PUBLIC_FORMSPREE_FORM_ID`)
    - Email fallback option
    - Success/error message feedback
 
@@ -157,11 +157,14 @@ All pages render correctly with:
 ## 📝 Configuration & Setup
 
 ### Environment Variables
-Create a `.env.local` file for production deployment:
+Copy `.env.example` to `.env.local` for local overrides:
 
 ```bash
-# Contact Form (optional - using Formspree)
-NEXT_PUBLIC_FORMSPREE_ENDPOINT=https://formspree.io/f/YOUR_FORM_ID
+# Contact Form (Formspree)
+NEXT_PUBLIC_FORMSPREE_FORM_ID=your_formspree_form_id
+
+# Analytics (optional)
+NEXT_PUBLIC_GA_MEASUREMENT_ID=G-XXXXXXXXXX
 ```
 
 ### Next.js Configuration
@@ -196,27 +199,21 @@ npm run dev
 # Visit http://localhost:3000
 ```
 
-### Production Build
+### Deployment
+Production host: **Vercel** (`unlovedproductions.com` project, Git-connected). See [`docs/RUNBOOK.md`](docs/RUNBOOK.md) for DNS records and verification commands.
+
 ```bash
 # Build for production
 npm run build
 
-# Start production server
+# Start production server locally
 npm start
 ```
-
-### Deployment Platforms
-This site is ready for deployment on:
-- **Vercel** (recommended for Next.js)
-- **Netlify**
-- **AWS Amplify**
-- Any Node.js hosting (with `npm run build` + `npm start`)
 
 ### Configuration for Formspree
 1. Go to formspree.io
 2. Create a new form for unlovedproductions.com
-3. Get your form endpoint (e.g., `https://formspree.io/f/YOUR_FORM_ID`)
-4. Update the contact form endpoint in `/src/app/contact/page.tsx` at line ~52
+3. Set `NEXT_PUBLIC_FORMSPREE_FORM_ID` in Vercel env vars (defaults to production form if unset locally)
 
 ---
 
@@ -261,28 +258,19 @@ This site is ready for deployment on:
 
 ## 🚨 Next Steps for User
 
-1. **Connect Formspree** (Optional for contact form)
-   - Sign up at formspree.io
-   - Create form for unlovedproductions.com
-   - Update endpoint in contact page
+1. **Replace product placeholder images** (Optional)
+   - Swap files in `/public/products/` with real screenshots
+   - Alt text and paths are wired via `/src/lib/images.ts`
 
-2. **Add Product Mockups** (Optional)
-   - Place WebP images in `/public/products/`
-   - Update paths in `/src/lib/images.ts`
-   - Images will lazy-load with proper alt text
+2. **Add custom OG images** (Optional for social sharing)
+   - Replace files in `/public/og/` with page-specific 1200×630 images
 
-3. **Add OG Images** (Optional for social sharing)
-   - Create 1200x630 OG images for each page
-   - Place in `/public/og/`
-   - Update paths in image utilities
+3. **SEO operations** (Post-launch)
+   - Follow [`docs/SEO_OPS.md`](docs/SEO_OPS.md) for GSC, IndexNow recheck, analytics, and monitoring
 
-4. **Customize Email** 
-   - Replace placeholder email in contact page and footer
-
-5. **Deploy**
-   - Push to GitHub
-   - Connect to Vercel for automatic deployments
-   - Domain: Set custom domain in hosting dashboard
+4. **Deploy**
+   - Push to GitHub (Vercel auto-deploys production)
+   - Confirm Namecheap DNS points apex + `www` at Vercel (see `docs/RUNBOOK.md`)
 
 ---
 

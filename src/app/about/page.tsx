@@ -1,8 +1,7 @@
-'use client';
-
 import Link from 'next/link';
 import { Navbar } from '@/components/navbar';
 import { aboutContent } from '@/config/site';
+import { FounderImage } from '@/components/founder-image';
 
 export default function AboutPage() {
   return (
@@ -23,14 +22,27 @@ export default function AboutPage() {
           <h1 className="font-display text-5xl md:text-6xl">About</h1>
         </section>
 
+        {/* Fact-first lede */}
+        <section className="max-w-3xl mx-auto px-6 py-12">
+          <p className="text-[#a0a0a0] text-lg leading-relaxed">{aboutContent.lede}</p>
+        </section>
+
         {/* Act 1: The Gap */}
-        <section className="max-w-3xl mx-auto px-6 py-20">
+        <section className="max-w-3xl mx-auto px-6 py-20 border-t border-[#1a1a1a]">
           <div className="space-y-8">
             <div>
               <h2 className="font-display text-3xl md:text-4xl mb-6">The Gap</h2>
-              <p className="text-[#a0a0a0] text-lg leading-relaxed whitespace-pre-line">
+              <p className="text-[#a0a0a0] text-lg leading-relaxed mb-6">
                 {aboutContent.act1.content}
               </p>
+              <ul className="space-y-3 text-[#a0a0a0] text-lg">
+                {aboutContent.act1.bullets.map((item) => (
+                  <li key={item} className="flex items-start gap-3">
+                    <span className="text-[#8B3A62] mt-1">•</span>
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
             </div>
           </div>
         </section>
@@ -57,11 +69,8 @@ export default function AboutPage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12 items-center">
             {/* Founder Photo Placeholder */}
             <div className="md:col-span-1">
-              <div className="border-2 border-[#8B3A62] bg-[#111111] aspect-square flex items-center justify-center">
-                <div className="text-center">
-                  <p className="text-[#808080]">Founder Photo</p>
-                  <p className="text-xs text-[#606060] mt-2">High contrast</p>
-                </div>
+              <div className="border-2 border-[#8B3A62] bg-[#111111] aspect-square overflow-hidden">
+                <FounderImage />
               </div>
             </div>
             <div className="md:col-span-2">

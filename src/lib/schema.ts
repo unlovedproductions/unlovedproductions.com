@@ -2,6 +2,46 @@
 
 const baseUrl = 'https://unlovedproductions.com';
 
+type ProductInput = {
+  id: string;
+  name: string;
+  description: string;
+  category: string;
+  ctaUrl?: string;
+  primaryCtaUrl?: string;
+  image?: string;
+  pricing?: Array<{ tier: string; details: string }>;
+  valueLadder?: Array<{ title: string; price: string }>;
+  tiers?: string[];
+  price?: string;
+};
+
+function getOfferPrice(product: ProductInput): string {
+  if (product.pricing?.some((tier) => tier.tier.toLowerCase() === 'free')) {
+    return '0';
+  }
+  if (product.tiers?.includes('Free')) {
+    return '0';
+  }
+  const ladderPrice = product.valueLadder?.[0]?.price?.replace(/[^0-9.]/g, '');
+  if (ladderPrice) {
+    return ladderPrice;
+  }
+  const productPrice = product.price?.replace(/[^0-9.]/g, '');
+  if (productPrice) {
+    return productPrice;
+  }
+  return '0';
+}
+
+function getOfferUrl(product: ProductInput): string {
+  const url = product.ctaUrl ?? product.primaryCtaUrl ?? `/products/${product.id}`;
+  if (url.startsWith('http')) {
+    return url;
+  }
+  return `${baseUrl}${url.startsWith('/') ? url : `/${url}`}`;
+}
+
 export const organizationSchema = {
   '@context': 'https://schema.org',
   '@type': 'Organization',
@@ -13,7 +53,7 @@ export const organizationSchema = {
     'https://twitter.com/unlovedprod',
     'https://github.com/unlovedproductions',
   ],
-  contact: {
+  contactPoint: {
     '@type': 'ContactPoint',
     contactType: 'Customer Support',
     email: 'hello@unlovedproductions.com',
@@ -24,30 +64,108 @@ export const organizationSchema = {
   },
 };
 
-export const productSchema = (product: any) => ({
+export const productSchema = (product: ProductInput) => {
+  const offer: Record<string, unknown> = {
+    '@type': 'Offer',
+    url: getOfferUrl(product),
+    priceCurrency: 'USD',
+    availability: 'https://schema.org/InStock',
+  };
+
+  // Puente is demo/contact sales — do not invent a $0 price
+  if (product.id !== 'puente') {
+    offer.price = getOfferPrice(product);
+  }
+
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'Product',
+    name: product.name,
+    description: product.description,
+    url: `${baseUrl}/products/${product.id}`,
+    category: product.category,
+    image: `${baseUrl}${product.image ?? '/og/default.png'}`,
+    offers: offer,
+  };
+};
+
+export const puenteSoftwareApplicationSchema = () => ({
   '@context': 'https://schema.org',
-  '@type': 'Product',
-  name: product.name,
-  description: product.description,
-  url: `${baseUrl}/products/${product.id}`,
-  category: product.category,
+  '@type': 'SoftwareApplication',
+  name: 'Puente',
+  description:
+    'Offline Android conversational translator for face-to-face interpreting on shared devices. Speak in English, Spanish, French, or German pairs; hear the reply spoken aloud; export bilingual logs—without cloud dependency after setup.',
+  url: `${baseUrl}/products/puente`,
+  applicationCategory: 'BusinessApplication',
+  operatingSystem: 'Android 5.0+',
   offers: {
     '@type': 'Offer',
-    url: product.ctaUrl,
+    url: `${baseUrl}/contact?subject=puente-demo`,
     priceCurrency: 'USD',
     availability: 'https://schema.org/InStock',
   },
+  provider: {
+    '@type': 'Organization',
+    name: 'unlovedproductions',
+    url: baseUrl,
+  },
+  featureList: [
+    'On-device speech recognition (Vosk)',
+    'Offline ML Kit translation after model download',
+    'Auto English ↔ Spanish and manual EN↔ES / EN↔FR / EN↔DE',
+    'Push-to-talk and turn-taking for shared devices',
+    'Export bilingual logs as TXT, PDF, or CSV',
+  ],
+});
+
+export const puenteHowToSchema = () => ({
+  '@context': 'https://schema.org',
+  '@type': 'HowTo',
+  name: 'How to use Puente for face-to-face offline interpreting',
+  description:
+    'Set up Puente once, choose a language mode, take turns speaking, and export bilingual conversation logs.',
+  step: [
+    {
+      '@type': 'HowToStep',
+      position: 1,
+      name: 'Set up once',
+      text: 'Install Puente, grant microphone access, complete onboarding, and allow the first ML Kit model download.',
+    },
+    {
+      '@type': 'HowToStep',
+      position: 2,
+      name: 'Choose a mode',
+      text: 'Auto EN↔ES for open conversation, or lock EN↔ES / EN↔FR / EN↔DE for known pairs.',
+    },
+    {
+      '@type': 'HowToStep',
+      position: 3,
+      name: 'Take turns',
+      text: 'Speak (or hold push-to-talk). Puente shows and speaks the translation, then listens for the reply.',
+    },
+    {
+      '@type': 'HowToStep',
+      position: 4,
+      name: 'Keep or share the record',
+      text: 'Favorite key turns; export TXT, PDF, or CSV when the visit or desk interaction ends.',
+    },
+  ],
 });
 
 export const breadcrumbSchema = (items: Array<{ name: string; url?: string }>) => ({
   '@context': 'https://schema.org',
   '@type': 'BreadcrumbList',
-  itemListElement: items.map((item, idx) => ({
-    '@type': 'ListItem',
-    position: idx + 1,
-    name: item.name,
-    item: item.url || undefined,
-  })),
+  itemListElement: items.map((item, idx) => {
+    const listItem: Record<string, unknown> = {
+      '@type': 'ListItem',
+      position: idx + 1,
+      name: item.name,
+    };
+    if (item.url) {
+      listItem.item = item.url;
+    }
+    return listItem;
+  }),
 });
 
 export const faqSchema = (faqs: Array<{ question: string; answer: string }>) => ({
@@ -69,14 +187,6 @@ export const websiteSchema = {
   url: baseUrl,
   name: 'unlovedproductions',
   description: 'Product studio for underserved markets',
-  potentialAction: {
-    '@type': 'SearchAction',
-    target: {
-      '@type': 'EntryPoint',
-      urlTemplate: `${baseUrl}/search?q={search_term_string}`,
-    },
-    'query-input': 'required name=search_term_string',
-  },
 };
 
 // AEO: Direct answer content for common questions
@@ -101,10 +211,18 @@ export const answerEngineOptimization = {
     answer: 'ReviveHQ pricing: Free (3 deals/week), $9 one-time (single deal report), $29/month Pro (20+ deals/week + full database).',
     context: 'ReviveHQ finds abandoned SaaS deals with real revenue potential.',
   },
+  'puente-what': {
+    question: 'What is Puente?',
+    answer:
+      'Puente is an Android conversational interpreter for shared devices. Two people take turns speaking into one device; speech recognition and translation run on-device after setup, without sending audio to the cloud for the core flow.',
+    context:
+      'Supports Auto English ↔ Spanish plus manual EN↔ES / EN↔FR / EN↔DE. Export bilingual logs as TXT, PDF, or CSV. Request a demo via unlovedproductions.com/contact.',
+  },
   'puente-price': {
     question: 'How much is Puente?',
-    answer: 'Puente is a one-time purchase app for offline translation in healthcare, travel, and service industry settings.',
-    context: 'Available on Gumroad with support for multiple language pairs and speech recognition.',
+    answer:
+      'Puente is offered through demo and sales contact—request a demo or email support@unlovedproductions.com. No self-serve storefront price is published on this site.',
+    context: 'B2B shared-device Android interpreter for clinics, hospitality, and field desks.',
   },
 };
 
@@ -131,7 +249,7 @@ export const localBusinessSchema = {
 };
 
 // Service schema for each product
-export const serviceSchema = (product: any) => ({
+export const serviceSchema = (product: ProductInput) => ({
   '@context': 'https://schema.org',
   '@type': 'Service',
   name: product.name,
@@ -149,7 +267,7 @@ export const serviceSchema = (product: any) => ({
   },
 });
 
-// Aggregate rating schema template
+// Aggregate rating schema template — use only with verified review data
 export const aggregateRatingSchema = (name: string, ratingValue: number, reviewCount: number) => ({
   '@context': 'https://schema.org',
   '@type': 'Product',

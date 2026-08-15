@@ -113,10 +113,11 @@ Crawl-delay: 1
 }
 ```
 
-#### 3. **hreflang Tags** (For International)
-- ✅ Self-referencing hreflang: `<link rel="alternate" hreflang="en-US" href="https://unlovedproductions.com/en/" />`
-- ✅ Default hreflang: `<link rel="alternate" hreflang="x-default" href="https://unlovedproductions.com/" />`
-- ✅ Ready for multi-language expansion
+#### 3. **hreflang Tags** (English US — single locale)
+- Self-referencing hreflang: `en-US` → `https://unlovedproductions.com`
+- Default hreflang: `x-default` → `https://unlovedproductions.com`
+- Implemented in root layout metadata (`alternates.languages`)
+- Multi-language `/en/` routes deferred until i18n is added
 
 #### 4. **Geographic Targeting**
 - ✅ Content language: English (US)
@@ -172,7 +173,7 @@ Crawl-delay: 1
 - [x] Internal linking strategy implemented
 - [x] Mobile responsive design
 - [x] Page speed optimized
-- [x] Alt text structure prepared
+- [x] Alt text on product and founder images via `images.ts` + `ProductImage` / `FounderImage` components
 - [x] Keywords targeting established
 
 ### AEO Checklist ✅
@@ -191,7 +192,7 @@ Crawl-delay: 1
 - [x] LocalBusiness schema
 - [x] PostalAddress markup
 - [x] areaServed designation (US)
-- [x] hreflang tags structure
+- [x] hreflang tags (single-locale en-US + x-default)
 - [x] Geographic targeting
 - [x] Contact information displayed
 - [x] Trust signals established
@@ -244,16 +245,18 @@ Crawl-delay: 1
 
 ## 🚀 Next Steps for Production
 
-1. **Verify Google Search Console** - Submit sitemap, monitor crawl stats
-2. **Monitor Core Web Vitals** - Use PageSpeed Insights, CrUX
-3. **Set Up Analytics** - Track organic traffic, user behavior
-4. **Monitor SERP Rankings** - Track keyword positions
-5. **Optimize Images** - Replace mockups with actual product screenshots
-6. **Add Reviews** - Integrate user reviews for social proof
-7. **Monitor Rich Results** - Check Google Search Console for rich results
-8. **Build Backlinks** - Create content that attracts links
-9. **Local SEO** - Add business listings (Google Business Profile)
-10. **Content Expansion** - Add blog posts for long-tail keywords
+Operational checklist: see [`docs/SEO_OPS.md`](docs/SEO_OPS.md).
+
+1. **Verify Google Search Console** — submit sitemap, monitor crawl stats
+2. **Monitor Core Web Vitals** — Use PageSpeed Insights, CrUX
+3. **Set Up Analytics** — set `NEXT_PUBLIC_GA_MEASUREMENT_ID` in Vercel (see `.env.example`)
+4. **Monitor SERP Rankings** — Track keyword positions
+5. **Replace placeholder product images** — swap `/public/products/*.png` with real screenshots when available
+6. **Add Reviews** — Integrate `aggregateRatingSchema` only when real verified reviews exist
+7. **Monitor Rich Results** — Check Google Search Console for rich results
+8. **Build Backlinks** — Create content that attracts links (see `/blog` pipeline)
+9. **Local SEO** — Add business listings (Google Business Profile)
+10. **Content Expansion** — Publish blog posts from planned topics on `/blog`
 
 ---
 

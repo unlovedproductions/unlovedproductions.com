@@ -30,6 +30,7 @@ export function generateMetadata(options: PageMetadataOptions): Metadata {
 
   const url = `${baseUrl}${path}`;
   const fullTitle = `${title} — unlovedproductions`;
+  const imageUrl = image.startsWith('http') ? image : `${baseUrl}${image}`;
 
   return {
     title: fullTitle,
@@ -58,7 +59,7 @@ export function generateMetadata(options: PageMetadataOptions): Metadata {
       type: type as 'website' | 'article',
       images: [
         {
-          url: image,
+          url: imageUrl,
           width: 1200,
           height: 630,
           alt: title,
@@ -73,19 +74,12 @@ export function generateMetadata(options: PageMetadataOptions): Metadata {
       card: 'summary_large_image',
       title: fullTitle,
       description,
-      images: [image],
+      images: [imageUrl],
       creator: '@unlovedprod',
       site: '@unlovedprod',
     },
     alternates: {
       canonical: url,
-      languages: {
-        'en-US': `${baseUrl}/en${path}`,
-      },
-    },
-    verification: {
-      google: 'google-site-verification-code',
-      yandex: 'yandex-verification-code',
     },
     robots: {
       index: true,
@@ -124,20 +118,60 @@ export function generateBreadcrumbMetadata(items: Array<{ name: string; url: str
   };
 }
 
-export function generateProductMetadata(product: any) {
+type ProductMetadataInput = {
+  id: string;
+  name: string;
+  tagline: string;
+  description: string;
+  category: string;
+};
+
+export function generateProductMetadata(product: ProductMetadataInput) {
+  if (product.id === 'puente') {
+    return generatePuenteMetadata();
+  }
+
   const keywords = [
     product.category.toLowerCase(),
     product.name.toLowerCase(),
     product.tagline.toLowerCase(),
   ];
 
+  const description =
+    product.description.length <= 160
+      ? product.description
+      : `${product.description.slice(0, 157)}...`;
+
   return generateMetadata({
     title: product.name,
-    description: product.tagline,
+    description,
     path: `/products/${product.id}`,
     keywords,
-    type: 'product',
-    image: `${baseUrl}/og/${product.id}.png`,
+    type: 'website',
+    image: defaultImage,
+  });
+}
+
+export function generatePuenteMetadata() {
+  const description =
+    'Puente is an offline Android conversational translator for face-to-face interpreting. English, Spanish, French, or German pairs—export bilingual logs without cloud dependency after setup.';
+
+  return generateMetadata({
+    title: 'Puente — Offline Android conversational translator',
+    description,
+    path: '/products/puente',
+    keywords: [
+      'offline translator',
+      'Android interpreter',
+      'shared device translation',
+      'English Spanish French German',
+      'on-device speech recognition',
+      'clinic hospitality translation',
+      'conversational interpreter',
+      'offline bilingual logs',
+    ],
+    type: 'website',
+    image: `${baseUrl}/products/puente.jpg`,
   });
 }
 
