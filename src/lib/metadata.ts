@@ -170,7 +170,7 @@ export function generatePuenteMetadata() {
       'conversational interpreter',
       'offline bilingual logs',
     ],
-    type: 'product',
+    type: 'website',
     image: `${baseUrl}/products/puente.jpg`,
   });
 }
