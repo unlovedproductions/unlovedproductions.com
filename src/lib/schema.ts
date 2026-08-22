@@ -1,5 +1,7 @@
 // Comprehensive Schema.org markup for SEO, AEO, and GEO optimization
 
+import type { Book } from '@/config/books';
+
 const baseUrl = 'https://unlovedproductions.com';
 
 type ProductInput = {
@@ -88,6 +90,89 @@ export const productSchema = (product: ProductInput) => {
     offers: offer,
   };
 };
+
+export const bookSchema = (book: Book) => {
+  const schema: Record<string, unknown> = {
+    '@context': 'https://schema.org',
+    '@type': 'Book',
+    name: book.title,
+    alternativeHeadline: book.subtitle,
+    description: book.description,
+    url: `${baseUrl}/books/${book.id}`,
+    bookFormat: 'https://schema.org/Paperback',
+    inLanguage: 'en',
+    author: {
+      '@type': 'Organization',
+      name: book.author,
+      url: baseUrl,
+    },
+    publisher: {
+      '@type': 'Organization',
+      name: book.imprint,
+      url: baseUrl,
+    },
+  };
+
+  if (book.coverImage) {
+    schema.image = `${baseUrl}${book.coverImage}`;
+  }
+
+  if (book.isbn) {
+    schema.isbn = book.isbn;
+  }
+
+  if (book.pageCount !== undefined) {
+    schema.numberOfPages = book.pageCount;
+  }
+
+  if (book.series) {
+    schema.isPartOf = {
+      '@type': 'BookSeries',
+      name: book.series.name,
+      url: `${baseUrl}/books`,
+    };
+    schema.position = String(book.series.position);
+  }
+
+  switch (book.status) {
+    case 'live':
+      if (book.amazonUrl) {
+        schema.offers = {
+          '@type': 'Offer',
+          url: book.amazonUrl,
+          availability: 'https://schema.org/InStock',
+          priceCurrency: 'USD',
+        };
+      }
+      break;
+    case 'coming-soon':
+      schema.offers = {
+        '@type': 'Offer',
+        url: `${baseUrl}/books/${book.id}`,
+        availability: 'https://schema.org/PreOrder',
+        priceCurrency: 'USD',
+      };
+      break;
+    default: {
+      const _exhaustive: never = book.status;
+      throw new Error(`Unhandled book status: ${_exhaustive}`);
+    }
+  }
+
+  return schema;
+};
+
+export const bookListSchema = (bookList: Book[]) => ({
+  '@context': 'https://schema.org',
+  '@type': 'ItemList',
+  name: 'unlovedproductions books',
+  itemListElement: bookList.map((book, index) => ({
+    '@type': 'ListItem',
+    position: index + 1,
+    url: `${baseUrl}/books/${book.id}`,
+    name: book.title,
+  })),
+});
 
 export const puenteSoftwareApplicationSchema = () => ({
   '@context': 'https://schema.org',

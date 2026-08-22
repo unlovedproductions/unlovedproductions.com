@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import type { Book } from '@/config/books';
 
 const baseUrl = 'https://unlovedproductions.com';
 const defaultImage = `${baseUrl}/og/default.png`;
@@ -149,6 +150,30 @@ export function generateProductMetadata(product: ProductMetadataInput) {
     keywords,
     type: 'website',
     image: defaultImage,
+  });
+}
+
+export function generateBookMetadata(book: Book) {
+  const title = `${book.title}: ${book.subtitle}`;
+  const description =
+    book.description.length <= 160
+      ? book.description
+      : `${book.description.slice(0, 157)}...`;
+  const keywords = [
+    book.title.toLowerCase(),
+    book.category.toLowerCase(),
+    'kdp',
+    'paperback',
+    ...(book.series ? [book.series.name.toLowerCase()] : []),
+  ];
+
+  return generateMetadata({
+    title,
+    description,
+    path: `/books/${book.id}`,
+    keywords,
+    type: 'website',
+    image: book.coverImage ? `${baseUrl}${book.coverImage}` : defaultImage,
   });
 }
 

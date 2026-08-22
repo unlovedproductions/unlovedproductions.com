@@ -1,4 +1,5 @@
 import { MetadataRoute } from 'next';
+import { books } from '@/config/books';
 import { products, siteConfig } from '@/config/site';
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -16,6 +17,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: new Date(),
       changeFrequency: 'weekly',
       priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/books`,
+      lastModified: new Date(),
+      changeFrequency: 'weekly',
+      priority: 0.8,
     },
     {
       url: `${baseUrl}/about`,
@@ -50,5 +57,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.8,
   }));
 
-  return [...staticPages, ...productPages];
+  const bookPages: MetadataRoute.Sitemap = books.map((book) => ({
+    url: `${baseUrl}/books/${book.id}`,
+    lastModified: new Date(),
+    changeFrequency: 'monthly',
+    priority: 0.7,
+  }));
+
+  return [...staticPages, ...productPages, ...bookPages];
 }

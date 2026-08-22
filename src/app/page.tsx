@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { Navbar } from '@/components/navbar';
 import { products, manifesto, upcomingProducts } from '@/config/site';
+import { books } from '@/config/books';
 import { ArrowRight } from 'lucide-react';
 
 const taglines = [
@@ -88,6 +89,39 @@ export default function Home() {
                 <p className="text-xs text-[#606060] mt-2">Soon</p>
               </div>
             </div>
+          </div>
+        </section>
+
+        <section id="books" className="px-6 py-20 max-w-7xl mx-auto border-t border-[#1a1a1a]">
+          <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-12">
+            <div>
+              <p className="text-xs uppercase tracking-widest text-[#8B3A62] mb-3">Books</p>
+              <h2 className="font-display text-4xl md:text-5xl">Coming to Amazon KDP</h2>
+            </div>
+            <Link
+              href="/books"
+              className="inline-flex items-center gap-2 text-[#8B3A62] text-sm font-medium hover:text-white transition-colors"
+            >
+              See all books <ArrowRight size={16} />
+            </Link>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {books.map((book) => (
+              <Link
+                key={book.id}
+                href={`/books/${book.id}`}
+                className="group border border-[#1f1f1f] bg-[#111111] p-6 hover:border-t-[#8B3A62] hover:translate-y-[-4px] transition-all duration-300"
+              >
+                <p className="text-xs uppercase tracking-widest text-[#8B3A62] mb-3">
+                  {book.series
+                    ? `${book.series.name} · Book ${book.series.position}`
+                    : book.category}
+                </p>
+                <h3 className="font-display text-2xl mb-2">{book.title}</h3>
+                <p className="text-sm text-[#a0a0a0] mb-4">{book.subtitle}</p>
+                <p className="text-xs uppercase tracking-widest text-[#808080]">Coming soon</p>
+              </Link>
+            ))}
           </div>
         </section>
 

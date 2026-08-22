@@ -38,6 +38,11 @@ const faqs = [
       'Puente is an Android conversational interpreter for shared devices. Two people take turns speaking into one device; speech recognition and translation run on-device after setup. Supports Auto English ↔ Spanish plus manual EN↔ES / EN↔FR / EN↔DE, with exportable bilingual logs (TXT, PDF, CSV). Request a demo or contact sales at support@unlovedproductions.com.',
   },
   {
+    question: 'Do you publish books?',
+    answer:
+      'UnlovedProductions has titles in preparation for Amazon KDP: The Stoic Collection (Stoic Foundations and Stoic Shadow Work Journal) and Big Easy Coloring Book for Toddlers Ages 2-5. They are not live on Amazon yet. See /books for the catalog; buy links appear when a listing is approved.',
+  },
+  {
     question: 'How do I contact unlovedproductions?',
     answer: 'Visit our contact page at /contact to fill out a form, or email hello@unlovedproductions.com directly. We respond to all inquiries.',
   },
