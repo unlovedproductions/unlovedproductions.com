@@ -26,7 +26,35 @@ export default function ContactPage() {
         {/* Full Height Contact Section */}
         <section className="min-h-[calc(100vh-120px)] flex flex-col items-center justify-center px-6 py-20">
           <div className="w-full max-w-2xl">
-            <h1 className="font-display text-5xl md:text-6xl mb-12 text-center">Say something.</h1>
+            <h1 className="font-display text-5xl md:text-6xl mb-6 text-center">Say something.</h1>
+            <p className="text-[#a0a0a0] text-lg leading-relaxed text-center mb-4">
+              Questions about KDP Creator Suite, Ghost Protocol, ReviveHQ, KDP Fast Launch, or Puente —
+              product demos, partnerships, press, corrections, or feedback — use the form below.
+            </p>
+            <p className="text-[#808080] text-base leading-relaxed text-center mb-6">
+              We read every message. For sales and demo requests, include your use case and preferred
+              contact time. For bug reports or outdated page details, link the URL and what should change.
+            </p>
+            <div className="text-[#808080] text-sm leading-relaxed mb-12 space-y-3 max-w-xl mx-auto">
+              <p>
+                <span className="text-[#a0a0a0] font-medium">Product support:</span> which product,
+                what you tried, and the result you expected.
+              </p>
+              <p>
+                <span className="text-[#a0a0a0] font-medium">Partnerships and press:</span> who you are,
+                the opportunity, and a deadline if you have one.
+              </p>
+              <p>
+                <span className="text-[#a0a0a0] font-medium">Privacy:</span> we use your email only to
+                reply. Do not send passwords or sensitive account credentials through this form.
+              </p>
+              <p>
+                <span className="text-[#a0a0a0] font-medium">What happens next:</span> you get a reply
+                from hello@unlovedproductions.com. Demo requests for Puente go to the same inbox and may
+                include a short scheduling follow-up. We do not auto-subscribe you to a newsletter from
+                this form.
+              </p>
+            </div>
 
             {/* Form */}
             {state.succeeded ? (

@@ -45,3 +45,6 @@ yarn-error.log*
 next-env.d.ts
 
 .idea
+
+# seo-god (secrets, OpenSEO data, run markers)
+.seo-god/

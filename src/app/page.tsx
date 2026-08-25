@@ -64,6 +64,7 @@ export default function Home() {
 
         {/* Products Grid */}
         <section id="products" className="px-6 py-20 max-w-7xl mx-auto">
+          <h2 className="font-display text-4xl md:text-5xl mb-12">Products</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-20">
             {products.map((product) => (
               <Link

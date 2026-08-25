@@ -119,8 +119,9 @@ export default function FAQPage() {
                   onClick={() => setOpenIndex(openIndex === index ? null : index)}
                   className="w-full px-6 py-4 text-left flex items-center justify-between hover:bg-[#1a1a1a] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#8B3A62] focus-visible:ring-offset-2 focus-visible:ring-offset-[#111111]"
                   aria-expanded={openIndex === index}
+                  aria-controls={`faq-answer-${index}`}
                 >
-                  <h3 className="font-medium text-[#ffffff]">{faq.question}</h3>
+                  <h2 className="font-medium text-[#ffffff] text-base">{faq.question}</h2>
                   <ChevronDown
                     size={20}
                     className={`text-[#8B3A62] flex-shrink-0 transition-transform ${
@@ -129,11 +130,13 @@ export default function FAQPage() {
                   />
                 </button>
 
-                {openIndex === index && (
-                  <div className="px-6 py-4 bg-[#0d0d0d] border-t border-[#1f1f1f]">
-                    <p className="text-[#a0a0a0] leading-relaxed">{faq.answer}</p>
-                  </div>
-                )}
+                <div
+                  id={`faq-answer-${index}`}
+                  hidden={openIndex !== index}
+                  className="px-6 py-4 bg-[#0d0d0d] border-t border-[#1f1f1f]"
+                >
+                  <p className="text-[#a0a0a0] leading-relaxed">{faq.answer}</p>
+                </div>
               </div>
             ))}
           </div>
