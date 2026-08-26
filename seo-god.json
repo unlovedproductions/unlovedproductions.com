@@ -6,7 +6,7 @@
   "phases": {
     "setup": "done",
     "audit": "done",
-    "measure": "pending",
+    "measure": "in_progress",
     "ai_visibility": "pending",
     "schedule": "pending"
   },
