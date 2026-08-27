@@ -2,16 +2,32 @@
   "version": 1,
   "site_url": "https://unlovedproductions.com",
   "openseo": { "url": "http://127.0.0.1:3001", "status": "running" },
-  "gsc": { "connected": false },
+  "gsc": { "connected": true },
   "phases": {
     "setup": "done",
     "audit": "done",
-    "measure": "in_progress",
+    "measure": "done",
     "ai_visibility": "pending",
     "schedule": "pending"
   },
   "schedule": { "mode": "none", "time_local": "05:00", "marker": ".seo-god/last-run.json" },
   "ai_prompts_locked": [],
   "power_ups": { "dataforseo": false, "llm_keys": false, "telegram": false },
-  "build_cmd": "npm run build"
+  "build_cmd": "npm run build",
+  "keywords": [
+    "unlovedproductions",
+    "unloved productions",
+    "KDP Creator Suite",
+    "Ghost Protocol privacy",
+    "data broker removal tool",
+    "abandoned SaaS deals",
+    "KDP Fast Launch",
+    "publish first KDP book",
+    "Puente translator",
+    "offline Android translator",
+    "face to face translation app",
+    "Amazon KDP software",
+    "indie product studio tools",
+    "digital privacy audit"
+  ]
 }
