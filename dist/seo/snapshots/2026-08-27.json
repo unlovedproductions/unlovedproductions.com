@@ -143,9 +143,20 @@
     "top_queries": []
   },
   "ai_visibility": {
-    "measured": false,
-    "prompts_ok": 0,
+    "measured": true,
+    "prompts_ok": 10,
     "cited": 0,
-    "competitors": {}
+    "competitors": {
+      "github.com": 3,
+      "30daypivot.com": 1,
+      "aiwritebook.com": 1,
+      "blog.bookautoai.com": 1,
+      "bookblaze.co": 1,
+      "cambric.pub": 1,
+      "companyrank.ai": 1,
+      "dev.to": 1,
+      "devpost.com": 1,
+      "doi.org": 1
+    }
   }
 }

@@ -1,18 +1,42 @@
 {
   "version": 1,
   "site_url": "https://unlovedproductions.com",
-  "openseo": { "url": "http://127.0.0.1:3001", "status": "running" },
-  "gsc": { "connected": true },
+  "openseo": {
+    "url": "http://127.0.0.1:3001",
+    "status": "running"
+  },
+  "gsc": {
+    "connected": true
+  },
   "phases": {
     "setup": "done",
     "audit": "done",
     "measure": "done",
-    "ai_visibility": "pending",
+    "ai_visibility": "done",
     "schedule": "pending"
   },
-  "schedule": { "mode": "none", "time_local": "05:00", "marker": ".seo-god/last-run.json" },
-  "ai_prompts_locked": [],
-  "power_ups": { "dataforseo": false, "llm_keys": false, "telegram": false },
+  "schedule": {
+    "mode": "none",
+    "time_local": "05:00",
+    "marker": ".seo-god/last-run.json"
+  },
+  "ai_prompts_locked": [
+    "is unlovedproductions a real product studio or just a landing page",
+    "unlovedproductions vs other indie software studios \u2014 what do they ship",
+    "Ghost Protocol by unlovedproductions \u2014 is the privacy audit worth it",
+    "Puente translator from unlovedproductions \u2014 offline Android demo",
+    "KDP Creator Suite unlovedproductions \u2014 good for Amazon authors",
+    "best Amazon KDP software for indie authors",
+    "how do I remove my info from data broker sites myself",
+    "cheapest way to publish a first KDP book with free tools",
+    "what do clinics use for shared device English Spanish interpreting",
+    "offline Android translator that works without cloud after setup"
+  ],
+  "power_ups": {
+    "dataforseo": false,
+    "llm_keys": false,
+    "telegram": false
+  },
   "build_cmd": "npm run build",
   "keywords": [
     "unlovedproductions",
