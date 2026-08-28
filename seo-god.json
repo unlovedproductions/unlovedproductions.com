@@ -37,7 +37,7 @@
     "llm_keys": false,
     "telegram": false
   },
-  "build_cmd": "npm run build",
+  "build_cmd": "pnpm run build",
   "keywords": [
     "unlovedproductions",
     "unloved productions",

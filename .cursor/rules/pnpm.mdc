@@ -1,0 +1,17 @@
+---
+description: Use pnpm as the package manager for this project
+alwaysApply: true
+---
+
+# Package manager
+
+This project uses **pnpm**, not npm.
+
+- Install: `pnpm install`
+- Build: `pnpm run build`
+- Dev: `pnpm dev`
+- Lint: `pnpm lint`
+
+Do not use `npm install`, `npm run`, or `npx` unless the user explicitly asks.
+
+`seo-god.json` `build_cmd` is `pnpm run build`. Claude Code settings allow `Bash(pnpm run build:*)` for unattended seo-god runs.
