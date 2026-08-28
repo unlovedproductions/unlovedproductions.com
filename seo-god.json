@@ -13,10 +13,10 @@
     "audit": "done",
     "measure": "done",
     "ai_visibility": "done",
-    "schedule": "pending"
+    "schedule": "done"
   },
   "schedule": {
-    "mode": "none",
+    "mode": "os",
     "time_local": "05:00",
     "marker": ".seo-god/last-run.json"
   },
