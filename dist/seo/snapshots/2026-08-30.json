@@ -1,0 +1,95 @@
+{
+  "date": "2026-08-30",
+  "source": "seo-god",
+  "site": "https://unlovedproductions.com",
+  "crawl": {
+    "pages": 10,
+    "issues": [
+      {
+        "type": "broken-internal-link",
+        "severity": "error",
+        "urls": [
+          "https://unlovedproductions.com/",
+          "https://unlovedproductions.com/products"
+        ]
+      },
+      {
+        "type": "broken-page",
+        "severity": "warn",
+        "urls": [
+          "https://unlovedproductions.com/products/ghost-protocol",
+          "https://unlovedproductions.com/products/kdp-creator-suite",
+          "https://unlovedproductions.com/products/kdp-fast-launch",
+          "https://unlovedproductions.com/products/puente",
+          "https://unlovedproductions.com/products/revivehq"
+        ]
+      },
+      {
+        "type": "thin-content",
+        "severity": "warn",
+        "urls": [
+          "https://unlovedproductions.com/about",
+          "https://unlovedproductions.com/contact",
+          "https://unlovedproductions.com/faq"
+        ]
+      },
+      {
+        "type": "meta-description-too-long",
+        "severity": "info",
+        "urls": [
+          "https://unlovedproductions.com/",
+          "https://unlovedproductions.com/about",
+          "https://unlovedproductions.com/contact",
+          "https://unlovedproductions.com/faq",
+          "https://unlovedproductions.com/products"
+        ]
+      },
+      {
+        "type": "canonicalized-page",
+        "severity": "info",
+        "urls": [
+          "https://unlovedproductions.com/about",
+          "https://unlovedproductions.com/contact",
+          "https://unlovedproductions.com/faq",
+          "https://unlovedproductions.com/products"
+        ]
+      },
+      {
+        "type": "heading-order-skip",
+        "severity": "info",
+        "urls": [
+          "https://unlovedproductions.com/",
+          "https://unlovedproductions.com/faq"
+        ]
+      }
+    ]
+  },
+  "ranks": [
+    { "keyword": "unlovedproductions", "position": null, "url": "" },
+    { "keyword": "unloved productions", "position": null, "url": "" },
+    { "keyword": "KDP Creator Suite", "position": null, "url": "" },
+    { "keyword": "Ghost Protocol privacy", "position": null, "url": "" },
+    { "keyword": "data broker removal tool", "position": null, "url": "" },
+    { "keyword": "abandoned SaaS deals", "position": null, "url": "" },
+    { "keyword": "KDP Fast Launch", "position": null, "url": "" },
+    { "keyword": "publish first KDP book", "position": null, "url": "" },
+    { "keyword": "Puente translator", "position": null, "url": "" },
+    { "keyword": "offline Android translator", "position": null, "url": "" },
+    { "keyword": "face to face translation app", "position": null, "url": "" },
+    { "keyword": "Amazon KDP software", "position": null, "url": "" },
+    { "keyword": "indie product studio tools", "position": null, "url": "" },
+    { "keyword": "digital privacy audit", "position": null, "url": "" }
+  ],
+  "gsc": {
+    "available": true,
+    "clicks28d": 0,
+    "impressions28d": 4,
+    "top_queries": []
+  },
+  "ai_visibility": {
+    "measured": false,
+    "prompts_ok": 0,
+    "cited": 0,
+    "competitors": {}
+  }
+}
