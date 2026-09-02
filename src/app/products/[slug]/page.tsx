@@ -70,6 +70,43 @@ export default async function ProductPage({ params }: Props) {
             <div>
               <h2 className="text-sm uppercase tracking-widest text-[#8B3A62] mb-4">Overview</h2>
               <p className="text-[#a0a0a0] text-lg leading-relaxed mb-8">{product.description}</p>
+              <div className="mb-8 space-y-4 text-[#a0a0a0] leading-relaxed">
+                <h2 className="text-sm uppercase tracking-widest text-[#8B3A62]">What {product.name} is</h2>
+                <p>
+                  {product.name} is filed under {product.category}. {product.tagline}.
+                  Next step on this site: {primaryCta.label}.
+                </p>
+                {'tiers' in product && product.tiers ? (
+                  <p>
+                    Listed tiers: {product.tiers.join(', ')}. The live product URL in the catalog is{' '}
+                    {product.ctaUrl}.
+                  </p>
+                ) : null}
+                {'valueLadder' in product && product.valueLadder ? (
+                  <p>
+                    Catalog offers:{' '}
+                    {product.valueLadder.map((tier) => `${tier.title} (${tier.price})`).join('; ')}.
+                    Secondary path: {product.secondaryCta} at {product.secondaryCtaUrl}.
+                  </p>
+                ) : null}
+                {'stats' in product && product.stats ? (
+                  <p>
+                    Catalog figures:{' '}
+                    {product.stats.map((stat) => `${stat.value} ${stat.label.toLowerCase()}`).join('; ')}.
+                    Pricing in the catalog:{' '}
+                    {'pricing' in product && product.pricing
+                      ? product.pricing.map((tier) => `${tier.tier} (${tier.details})`).join('; ')
+                      : null}
+                    . Live deals: {product.ctaUrl}.
+                  </p>
+                ) : null}
+                {'ctaUrl' in product && product.ctaUrl.startsWith('/') ? (
+                  <p>
+                    This listing does not send you to a separate product domain. The catalog CTA is{' '}
+                    {product.cta} and it stays on unlovedproductions.com ({product.ctaUrl}).
+                  </p>
+                ) : null}
+              </div>
 
               {'valueLadder' in product && product.valueLadder && (
                 <div className="mb-8">

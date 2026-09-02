@@ -5,7 +5,7 @@ import { ogImages } from '@/lib/images';
 export const metadata: Metadata = buildMetadata({
   title: 'Products',
   description:
-    'Explore five tools from unlovedproductions — KDP Creator Suite, Ghost Protocol, ReviveHQ, KDP Fast Launch, and Puente. Built for creators, privacy, and indie operators.',
+    'Five tools from unlovedproductions: KDP Creator Suite, Ghost Protocol, ReviveHQ, KDP Fast Launch, and Puente. Built for creators, privacy, and indie operators.',
   path: '/products',
   image: ogImages.products.fallback,
 });

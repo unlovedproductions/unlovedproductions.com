@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { Navbar } from '@/components/navbar';
 import { Mail } from 'lucide-react';
 import { useForm, ValidationError } from '@formspree/react';
+import { products } from '@/config/site';
 
 const formspreeFormId = process.env.NEXT_PUBLIC_FORMSPREE_FORM_ID ?? 'mnjrrqoa';
 
@@ -54,6 +55,16 @@ export default function ContactPage() {
                 include a short scheduling follow-up. We do not auto-subscribe you to a newsletter from
                 this form.
               </p>
+              <div>
+                <p className="text-[#a0a0a0] font-medium mb-2">Products you can ask about:</p>
+                <ul className="list-disc list-inside space-y-1">
+                  {products.map((product) => (
+                    <li key={product.id}>
+                      {product.name} — {product.tagline}
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </div>
 
             {/* Form */}

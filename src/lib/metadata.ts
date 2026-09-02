@@ -154,7 +154,10 @@ export function generateProductMetadata(product: ProductMetadataInput) {
 }
 
 export function generateBookMetadata(book: Book) {
-  const title = `${book.title}: ${book.subtitle}`;
+  const title =
+    book.id === 'big-easy-coloring-book-toddlers'
+      ? 'Big Easy Coloring Book for Toddlers'
+      : book.title;
   const description =
     book.description.length <= 160
       ? book.description
@@ -179,10 +182,10 @@ export function generateBookMetadata(book: Book) {
 
 export function generatePuenteMetadata() {
   const description =
-    'Puente is an offline Android conversational translator for face-to-face interpreting. English, Spanish, French, or German pairs—export bilingual logs without cloud dependency after setup.';
+    'Puente is an offline Android translator for face-to-face interpreting. English, Spanish, French, or German pairs. Export bilingual logs after setup.';
 
   return generateMetadata({
-    title: 'Puente — Offline Android conversational translator',
+    title: 'Puente — offline translator',
     description,
     path: '/products/puente',
     keywords: [

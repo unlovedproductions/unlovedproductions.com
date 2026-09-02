@@ -10,7 +10,7 @@
   },
   "phases": {
     "setup": "done",
-    "audit": "in_progress",
+    "audit": "done",
     "measure": "done",
     "ai_visibility": "done",
     "schedule": "in_progress"

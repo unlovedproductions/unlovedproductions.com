@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { Navbar } from '@/components/navbar';
 import { generateMetadata as buildMetadata } from '@/lib/metadata';
+import { aboutContent, manifesto } from '@/config/site';
 
 export const metadata: Metadata = buildMetadata({
   title: 'Blog',
@@ -48,6 +49,8 @@ export default function BlogPage() {
             seekers, and indie operators. Posts will lead with definitions, steps, and verifiable
             claims so both humans and answer engines can cite them.
           </p>
+          <p className="text-[#a0a0a0] text-lg leading-relaxed mb-6">{aboutContent.lede}</p>
+          <p className="text-[#a0a0a0] text-lg leading-relaxed mb-6">{manifesto}</p>
           <p className="text-sm text-[#808080]">
             Corrections: hello@unlovedproductions.com
           </p>
