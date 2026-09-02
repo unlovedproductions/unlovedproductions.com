@@ -9,14 +9,15 @@ This repository hosts the web presence for unlovedproductions.com.
 - Analytics: `src/components/analytics.tsx` (GA)
 - Styling and UI configuration (`tailwind.config.ts`, component config files)
 - Audit artifacts under `docs/competitive/`, `docs/aeo/`, `docs/frontend/`, `docs/seo/`
+- seo-god schedule + snapshots/readouts under `seo-god.json` and `dist/seo/`
 
 ## Build/Runtime
-- Development: `next dev`
-- Production build: `next build`
-- Production server: `next start`
+- Development: `pnpm dev` (`next dev`)
+- Production build: `pnpm build` (`next build`)
+- Production server: `pnpm start` (`next start`)
 - Production host: Vercel
 
 ## Operational Notes
-- Lockfile-driven npm dependency management (`package-lock.json`)
+- Lockfile-driven **pnpm** dependency management (`pnpm-lock.yaml`)
 - SEO / monitoring checklist: `docs/SEO_OPS.md`
 - No direct runtime dependency on APF, ShadowCast, or Mission Control

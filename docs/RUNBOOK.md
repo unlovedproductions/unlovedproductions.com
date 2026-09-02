@@ -4,26 +4,27 @@
 - Framework: Next.js
 - Production host: Vercel (`unlovedproductions.com` project)
 - Default dev URL: `http://localhost:3000`
+- Package manager: **pnpm** (`pnpm-lock.yaml`)
 
 ## Startup
 ```bash
-npm install
-npm run dev
+pnpm install
+pnpm dev
 ```
 
 ## Health Checks
 - Lint:
-  - `npm run lint`
+  - `pnpm lint`
 - Build:
-  - `npm run build`
+  - `pnpm build`
 - Local HTTP:
   - `curl -fsS http://localhost:3000 >/dev/null`
 
 ## Release-Oriented Commands
 - Production build:
-  - `npm run build`
+  - `pnpm build`
 - Local prod start:
-  - `npm run start`
+  - `pnpm start`
 - Vercel preview/production deploys happen via Git push to the linked repo.
 
 ## Production DNS (Namecheap)
@@ -52,6 +53,6 @@ curl -I https://unlovedproductions.com
 - Stop dev server terminal (`Ctrl+C`).
 
 ## Common Failures
-- Dependency drift: use `npm ci` to align with `package-lock.json`.
+- Dependency drift: use `pnpm install --frozen-lockfile` to align with `pnpm-lock.yaml`.
 - Build failures: resolve TypeScript/ESLint issues before deploy.
 - Domain still on Netlify: confirm Namecheap A/CNAME records match Vercel, then remove the custom domain from the Netlify project.

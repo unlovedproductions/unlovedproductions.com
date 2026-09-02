@@ -39,6 +39,13 @@ Track weekly (manual, no paid tools required):
 - Product queries: `KDP Creator Suite`, `Ghost Protocol`, `ReviveHQ`, `Puente translator`
 - AI citation checks: Perplexity / ChatGPT for "what is unlovedproductions"
 
+## seo-god (scheduled SEO readout)
+
+- Config: repo-root [`seo-god.json`](../seo-god.json)
+- Schedule: Cursor cloud agent (see recent commits; OS/Claude Code runners superseded)
+- Outputs: snapshots and readouts under `dist/seo/` (e.g. `dist/seo/snapshots/`, `dist/seo/readouts/`)
+- After a run, skim the latest readout and fold actionable items into this checklist or a punchlist under `docs/seo/` / `dist/seo/`
+
 ## Reviews and Social Proof
 
 Do **not** add `aggregateRating` schema until real verified reviews exist. Template is in [`src/lib/schema.ts`](../src/lib/schema.ts) (`aggregateRatingSchema`).

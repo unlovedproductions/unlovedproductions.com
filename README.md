@@ -5,8 +5,8 @@ Next.js marketing site for **unlovedproductions** — an indie product studio sh
 ## Quick start
 
 ```bash
-npm install
-npm run dev
+pnpm install
+pnpm dev
 ```
 
 ## Operational docs

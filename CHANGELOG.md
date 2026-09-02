@@ -8,6 +8,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ### Added
 
+- seo-god snapshots/readouts (e.g. `dist/seo/` for 2026-08-29) and Cursor-cloud schedule / Windows runner (`5ad39fe`, `c4e08fb`, `fb3bf9a`)
+- `pnpm-lock.yaml` + workspace config for package management (`0669da0`)
 - Full Puente product page with SEO/AEO schema and aligned copy (`c059bff`)
 - Competitive, AEO, frontend, and SEO audit artifacts under `docs/competitive/`, `docs/aeo/`, `docs/frontend/`, `docs/seo/`
 - Fact-first About/FAQ/Blog copy for AEO citation readiness
@@ -15,11 +17,13 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ### Changed
 
+- Ops docs (README, RECOVERY, RUNBOOK, ARCHITECTURE) standardized on **pnpm**
 - Four-skill audit suite applied; high-priority site fixes shipped (`b9b857a`)
 - Compressed product/OG/founder media (JPEG product assets ~134KB; OG ~108KB)
 - Removed unnecessary `'use client'` from About and Products listing pages
 - Lengthened root Open Graph / Twitter descriptions
 - Added missing KDP Fast Launch product image
+- OS seo-god schedule pointed at Cursor agent; Claude Code / OS schedule paths retired where superseded
 
 ## [2026-08-02]
 
