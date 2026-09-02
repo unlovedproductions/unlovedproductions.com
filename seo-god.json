@@ -10,7 +10,7 @@
   },
   "phases": {
     "setup": "done",
-    "audit": "done",
+    "audit": "in_progress",
     "measure": "done",
     "ai_visibility": "done",
     "schedule": "in_progress"
@@ -22,10 +22,10 @@
   },
   "ai_prompts_locked": [
     "is unlovedproductions a real product studio or just a landing page",
-    "unlovedproductions vs other indie software studios \u2014 what do they ship",
-    "Ghost Protocol by unlovedproductions \u2014 is the privacy audit worth it",
-    "Puente translator from unlovedproductions \u2014 offline Android demo",
-    "KDP Creator Suite unlovedproductions \u2014 good for Amazon authors",
+    "unlovedproductions vs other indie software studios — what do they ship",
+    "Ghost Protocol by unlovedproductions — is the privacy audit worth it",
+    "Puente translator from unlovedproductions — offline Android demo",
+    "KDP Creator Suite unlovedproductions — good for Amazon authors",
     "best Amazon KDP software for indie authors",
     "how do I remove my info from data broker sites myself",
     "cheapest way to publish a first KDP book with free tools",
