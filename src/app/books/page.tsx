@@ -64,7 +64,7 @@ export default function BooksPage() {
                       href={`/books/${book.id}`}
                       className="inline-flex items-center gap-2 text-[#8B3A62] font-medium hover:text-white transition-colors"
                     >
-                      Learn more <ArrowRight size={16} />
+                      About {book.title} <ArrowRight size={16} />
                     </Link>
                   </div>
                   <div className={`max-w-sm ${idx % 2 === 1 ? 'md:order-1' : ''}`}>
@@ -95,7 +95,7 @@ export default function BooksPage() {
                       href={`/books/${book.id}`}
                       className="inline-flex items-center gap-2 text-[#8B3A62] font-medium hover:text-white transition-colors"
                     >
-                      Learn more <ArrowRight size={16} />
+                      About {book.title} <ArrowRight size={16} />
                     </Link>
                   </div>
                   <div className="max-w-sm">

@@ -91,15 +91,17 @@ export default function ProductsPage() {
 
                     {/* CTAs */}
                     <div className="flex flex-col sm:flex-row gap-4">
+                      {'ctaUrl' in product && product.ctaUrl ? (
                       <a
                         href={product.ctaUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
+                        target={product.ctaUrl.startsWith('/') ? undefined : '_blank'}
+                        rel={product.ctaUrl.startsWith('/') ? undefined : 'noopener noreferrer'}
                         className="border border-[#8B3A62] text-[#8B3A62] px-6 py-3 font-medium hover:bg-[#8B3A62] hover:text-white transition-colors flex items-center justify-center gap-2"
                       >
                         {product.cta}
                         <ArrowRight size={18} />
                       </a>
+                      ) : null}
                       {product.secondaryCta && (
                         <a
                           href={product.secondaryCtaUrl}
