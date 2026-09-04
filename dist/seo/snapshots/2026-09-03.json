@@ -64,9 +64,9 @@
     { "keyword": "digital privacy audit", "position": null, "url": "" }
   ],
   "gsc": {
-    "available": false,
+    "available": true,
     "clicks28d": 0,
-    "impressions28d": 0,
+    "impressions28d": 4,
     "top_queries": []
   },
   "ai_visibility": {
