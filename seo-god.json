@@ -13,12 +13,12 @@
     "audit": "done",
     "measure": "done",
     "ai_visibility": "done",
-    "schedule": "in_progress"
+    "schedule": "done"
   },
   "schedule": {
-    "mode": "cloud",
+    "mode": "os",
     "time_local": "05:00",
-    "marker": "seo/last-run.json"
+    "marker": ".seo-god/last-run.json"
   },
   "ai_prompts_locked": [
     "is unlovedproductions a real product studio or just a landing page",
