@@ -1103,23 +1103,23 @@ function showResult() {
     ${hasAIExposure ? `
     <div style="background:rgba(255,34,68,0.06);border:1px solid rgba(255,34,68,0.25);border-left:3px solid #ff2244;border-radius:6px;padding:20px 24px;margin-bottom:16px;">
       <div style="font-family:var(--mono);font-size:10px;letter-spacing:0.15em;text-transform:uppercase;color:#ff2244;margin-bottom:10px;">⚠ AI-ERA EXPOSURE DETECTED</div>
-      <p style="font-size:13px;color:#c8d8e4;line-height:1.75;margin:0;">Your results include threats that standard privacy guides don't address. Data broker removal alone will not protect you from AI re-identification or Shadow AI training. The Digital Ghost Protocol includes an AI Memory Defense module covering machine unlearning requests, Shadow AI opt-outs, and proactive footprint disruption — content no other guide offers.</p>
+      <p style="font-size:13px;color:#c8d8e4;line-height:1.75;margin:0;">Your results include threats that standard privacy guides don't address. Data broker removal alone will not protect you from AI re-identification or Shadow AI training. The Digital Ghost Protocol includes an AI Chat Defense module covering machine unlearning requests, Shadow AI opt-outs, and proactive footprint disruption — content no other guide offers.</p>
     </div>` : ''}
 
     <div class="cta-block">
       <div class="cta-tag">// The Fix</div>
-      <h3>Digital Ghost Protocol</h3>
-      <p>${hasAIExposure ? 'Your scan flagged AI-era threats that standard data removal doesn\'t address. The updated Ghost Protocol covers both: complete broker removal system plus the new AI Memory Defense module — machine unlearning requests, Shadow AI opt-outs, and proactive data poisoning tactics.' : ctaDescMap[ctaClass]}</p>
+      <h3>Deploy the Digital Ghost Protocol</h3>
+      <p>${hasAIExposure ? 'Your scan flagged AI-era threats that broker removal alone does not fix. Ghost Protocol now includes Step 06 AI Chat Defense — training opt-outs, chat-history deletion, and hard rules for cloud chatbots — plus Shadow AI guidance in the Ghost Stack.' : ctaDescMap[ctaClass]}</p>
       <div class="cta-features">
         <div class="cta-feat">✓ 30+ Search Queries</div>
         <div class="cta-feat">✓ 12+ Opt-Out Links</div>
         <div class="cta-feat">✓ Removal Templates</div>
-        ${hasAIExposure ? '<div class="cta-feat" style="color:#ff2244;">✓ AI Memory Defense Module</div>' : '<div class="cta-feat">✓ Zero Cost System</div>'}
+        ${hasAIExposure ? '<div class="cta-feat" style="color:#ff2244;">✓ AI Chat Defense (Step 06)</div>' : '<div class="cta-feat">✓ Zero Cost System</div>'}
       </div>
-      <a href="https://unlovedproductions.gumroad.com/l/Ghost-protocol" class="btn-cta ${ctaClass}" target="_blank">
-        ${hasAIExposure ? 'Get the Updated Ghost Protocol →' : ctaTextMap[ctaClass]}
+      <a href="/ghost-protocol" class="btn-cta ${ctaClass}">
+        ${hasAIExposure ? 'See Ghost Protocol →' : ctaTextMap[ctaClass]}
       </a>
-      <div class="cta-price">One-time download · No subscription · Instant access</div>
+      <div class="cta-price">Free landing · $17 download · No subscription</div>
     </div>
 
     <button class="btn-retry" onclick="retakeQuiz()">↺ Retake Quiz</button>
