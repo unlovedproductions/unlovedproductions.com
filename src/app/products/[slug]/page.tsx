@@ -184,8 +184,8 @@ export default async function ProductPage({ params }: Props) {
                 {'secondaryCta' in product && product.secondaryCta && 'secondaryCtaUrl' in product && (
                   <a
                     href={product.secondaryCtaUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
+                    target={product.secondaryCtaUrl.startsWith('http') ? '_blank' : undefined}
+                    rel={product.secondaryCtaUrl.startsWith('http') ? 'noopener noreferrer' : undefined}
                     className="border border-[#1f1f1f] text-[#a0a0a0] px-6 py-3 font-medium hover:border-[#8B3A62] hover:text-[#8B3A62] transition-colors flex items-center justify-center gap-2"
                   >
                     {product.secondaryCta}

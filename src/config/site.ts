@@ -26,7 +26,8 @@ export const products = [
     name: "Ghost Protocol",
     category: "Digital Privacy",
     tagline: "Audit and eliminate your personal exposure online",
-    description: "Ghost Protocol walks you through auditing and eliminating your personal exposure online. 20-minute exposure audit across 47+ data broker sites. Removal checklist for every major opt-out.",
+    description:
+      "Ghost Protocol walks you through auditing and eliminating your personal exposure online — data brokers, social lockdowns, and AI-chat exposure (training opt-outs, chat history deletion, Shadow AI in the tools you already use). 20-minute exposure audit across 47+ broker sites with a removal checklist for every major opt-out.",
     valueLadder: [
       { title: "Data Breach Response Playbook", price: "$9" },
       { title: "Digital Ghost Protocol", price: "$17" },
@@ -34,9 +35,9 @@ export const products = [
       { title: "Family Protection Protocol", price: "$97" },
     ],
     secondaryCta: "Take the Free Privacy Exposure Quiz",
-    secondaryCtaUrl: "https://privacy-exposure-quiz.netlify.app",
+    secondaryCtaUrl: "/privacy-quiz",
     primaryCta: "Start Ghost Protocol",
-    primaryCtaUrl: "https://ghostprotocollanding.netlify.app",
+    primaryCtaUrl: "/ghost-protocol",
     image: "/products/ghost-protocol.jpg",
     order: 2,
   },
