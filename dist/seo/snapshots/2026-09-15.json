@@ -1,0 +1,141 @@
+{
+  "date": "2026-09-15",
+  "source": "seo-god",
+  "site": "https://unlovedproductions.com",
+  "crawl": {
+    "pages": 17,
+    "issues": [
+      {
+        "type": "thin-content",
+        "severity": "warn",
+        "urls": [
+          "https://unlovedproductions.com/blog",
+          "https://unlovedproductions.com/contact",
+          "https://unlovedproductions.com/contact?subject=download",
+          "https://unlovedproductions.com/contact?subject=puente-demo",
+          "https://unlovedproductions.com/products/ghost-protocol",
+          "https://unlovedproductions.com/products/kdp-creator-suite",
+          "https://unlovedproductions.com/products/kdp-fast-launch",
+          "https://unlovedproductions.com/products/revivehq"
+        ]
+      },
+      {
+        "type": "title-too-long",
+        "severity": "info",
+        "urls": [
+          "https://unlovedproductions.com/books/big-easy-coloring-book-toddlers",
+          "https://unlovedproductions.com/books/stoic-foundations",
+          "https://unlovedproductions.com/books/stoic-shadow-work-journal",
+          "https://unlovedproductions.com/products/puente"
+        ]
+      },
+      {
+        "type": "canonicalized-page",
+        "severity": "info",
+        "urls": [
+          "https://unlovedproductions.com/contact?subject=download",
+          "https://unlovedproductions.com/contact?subject=puente-demo"
+        ]
+      },
+      {
+        "type": "meta-description-too-long",
+        "severity": "info",
+        "urls": [
+          "https://unlovedproductions.com/products",
+          "https://unlovedproductions.com/products/puente"
+        ]
+      }
+    ]
+  },
+  "ranks": [
+    {
+      "keyword": "unlovedproductions",
+      "position": null,
+      "url": ""
+    },
+    {
+      "keyword": "unloved productions",
+      "position": null,
+      "url": ""
+    },
+    {
+      "keyword": "KDP Creator Suite",
+      "position": null,
+      "url": ""
+    },
+    {
+      "keyword": "Ghost Protocol privacy",
+      "position": null,
+      "url": ""
+    },
+    {
+      "keyword": "data broker removal tool",
+      "position": null,
+      "url": ""
+    },
+    {
+      "keyword": "abandoned SaaS deals",
+      "position": null,
+      "url": ""
+    },
+    {
+      "keyword": "KDP Fast Launch",
+      "position": null,
+      "url": ""
+    },
+    {
+      "keyword": "publish first KDP book",
+      "position": null,
+      "url": ""
+    },
+    {
+      "keyword": "Puente translator",
+      "position": null,
+      "url": ""
+    },
+    {
+      "keyword": "offline Android translator",
+      "position": null,
+      "url": ""
+    },
+    {
+      "keyword": "face to face translation app",
+      "position": null,
+      "url": ""
+    },
+    {
+      "keyword": "Amazon KDP software",
+      "position": null,
+      "url": ""
+    },
+    {
+      "keyword": "indie product studio tools",
+      "position": null,
+      "url": ""
+    },
+    {
+      "keyword": "digital privacy audit",
+      "position": null,
+      "url": ""
+    }
+  ],
+  "gsc": {
+    "available": true,
+    "clicks28d": 0,
+    "impressions28d": 8,
+    "top_queries": [
+      {
+        "query": "\"personal data exposure\"",
+        "clicks": 0,
+        "impressions": 2,
+        "position": 30
+      }
+    ]
+  },
+  "ai_visibility": {
+    "measured": false,
+    "prompts_ok": 0,
+    "cited": 0,
+    "competitors": {}
+  }
+}
