@@ -1,12 +1,8 @@
 import Script from 'next/script';
 
-const gaId = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID;
+const gaId = 'G-H6LERFLXLG';
 
 export function Analytics() {
-  if (!gaId) {
-    return null;
-  }
-
   return (
     <>
       <Script
